@@ -10,8 +10,6 @@ const Content = () => (
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/shop" component={Shop} />
-
-      <Route exact path="/login" component={Login} />
     </Switch>
   </div>
 );
