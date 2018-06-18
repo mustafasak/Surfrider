@@ -6,7 +6,7 @@ import Shop from '../Pages/Shop';
 import Login from '../Pages/Login';
 
 const Content = () => (
-  <div className="content-wrapper">
+  <div className="layout__main-wrapper">
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/shop" component={Shop} />

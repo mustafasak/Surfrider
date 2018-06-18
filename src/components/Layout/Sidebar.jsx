@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => (
-  <aside className="main-sidebar">
+  <aside className="layout__sidebar">
     <section className="sidebar">
       <div>
         <a href="#">
