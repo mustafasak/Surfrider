@@ -13,7 +13,7 @@ import Actus from '../Pages/Actus';
 import Login from '../Pages/Login';
 
 const Content = () => (
-  <div className="content-wrapper">
+  <div className="layout__main-wrapper">
     <Route exact path="/" component={Home} />
     <Route exact path="/shop" component={Shop} />
     <Route exact path="/antennes" component={Antennes} />
