@@ -7,9 +7,11 @@ import Header from './Header';
 import Sidebar from './Sidebar';
 import Content from './Content';
 
+import { userShape } from '../../config/shapes/user';
+
 class Dashboard extends PureComponent {
   render() {
-    const { authenticated } = this.props;
+    const { authenticated, user } = this.props;
 
     if (!authenticated) {
       return <Redirect to="/login" />;
@@ -19,7 +21,7 @@ class Dashboard extends PureComponent {
       <div className="layout__container">
         <Sidebar />
         <div className="layout__main">
-          <Header />
+          <Header user={user} />
           <Content />
         </div>
       </div>
@@ -28,10 +30,12 @@ class Dashboard extends PureComponent {
 }
 
 Dashboard.propTypes = {
+  user: PropTypes.shape(userShape).isRequired,
   authenticated: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => ({
+  user: state.user.user,
   authenticated: state.user.authenticated,
 });
 

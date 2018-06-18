@@ -1,39 +1,55 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-class Header extends Component {
-  render() {
-    return (
-      <header className="main-header">
-        <input type="text" placeholder="&#xF002;" className="search" />
-        <h1 className="title">Surfrider fondation europe</h1>
-        <nav className="nav-bar nav-bar-static-top">
-          <div className="navbar-custom-menu">
-            <ul className="nav navbar-nav">
-              <li className="messages-notif">
-                <a href="#" data-toggle="dropdown">
-                  <img className="icon-notif" src="/img/notification.png" />
-                </a>
-              </li>
-              <li className="settings">
-                <a href="#" data-toggle="dropdown">
-                  <img className="icon-setting" src="/img/settings.png" />
-                </a>
-              </li>
-              <li className="user-img">
-                <a href="#" data-toggle="dropdown">
-                  <img className="icon-user" src="/img/user.png" />
-                </a>
-              </li>
-              <li className="user-name">
-                <p>James Page</p>
-                <span>Administrateur</span>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
-    );
-  }
-}
+import { userShape } from '../../config/shapes/user';
+
+const Header = ({ user }) => (
+  <header className="layout__header">
+    <input type="text" placeholder="&#xF002;" className="search" />
+
+    <h1 className="title">Surfrider fondation europe</h1>
+
+    <nav className="header__navbar">
+      <button className="header__navbar-item" data-toggle="dropdown">
+        <img
+          className="icon icon-notif"
+          src="/img/notification.png"
+          alt="Notifications"
+        />
+      </button>
+      <button className="header__navbar-item" data-toggle="dropdown">
+        <img
+          className="icon icon-setting"
+          src="/img/settings.png"
+          alt="Settings"
+        />
+      </button>
+      <button
+        className="header__navbar-item header__navbar-item--user"
+        data-toggle="dropdown"
+      >
+        <img
+          className="icon icon-user"
+          src={user.avatar || '/img/user.png'}
+          alt="User"
+        />
+        <span className="header__user-info">
+          <span className="header__user-name">
+            {user.firstName && user.lastName
+              ? `${user.firstName} ${user.lastName}`
+              : user.email}
+          </span>
+          {user.isAdmin && (
+            <span className="header__user-title">Administrateur</span>
+          )}
+        </span>
+      </button>
+    </nav>
+  </header>
+);
+
+Header.propTypes = {
+  user: PropTypes.shape(userShape).isRequired,
+};
 
 export default Header;
