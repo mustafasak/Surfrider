@@ -3,6 +3,12 @@
         "airbnb",
         "prettier"
     ],
+
+    "globals": {
+        "fetch": true,
+        "localStorage": true
+    },
+
     "rules": {
         "jsx-a11y/anchor-is-valid": "off"
     }
