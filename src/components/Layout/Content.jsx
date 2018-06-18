@@ -23,8 +23,6 @@ const Content = () => (
     <Route exact path="/dons" component={Dons} />
     <Route exact path="/event" component={Event} />
     <Route exact path="/actus" component={Actus} />
-
-    <Route exact path="/login" component={Login} />
   </div>
 );
 

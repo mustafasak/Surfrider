@@ -1,0 +1,37 @@
+import fetchIntercept from 'fetch-intercept';
+
+import store from '../store';
+
+const unregister = fetchIntercept.register({
+  request: (url, config) => {
+    const {
+      user: {
+        token
+      }
+    } = store.getState();
+
+    return ([url, {
+      ...config,
+      headers: {
+        ...config.headers,
+        'Authorization': `Bearer ${token}`,
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      }
+    }]);
+  },
+
+  response: (response) => {
+    if (response.status === 403 || response.status === 401) {
+      return Promise.reject(response.statusText);
+    }
+
+    return response;
+  },
+
+  responseError: (error) => (
+    Promise.reject(error)
+  ),
+});
+
+export default unregister;

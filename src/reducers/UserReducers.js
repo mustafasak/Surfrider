@@ -1,7 +1,14 @@
 import {
+  SET_TOKEN,
+
   FETCH_LOGIN_USER,
   FETCH_LOGIN_USER_SUCCESS,
   FETCH_LOGIN_USER_ERROR,
+
+  FETCH_VERIFY_USER,
+  FETCH_VERIFY_USER_SUCCESS,
+  FETCH_VERIFY_USER_ERROR,
+
   FETCH_LOGOUT_USER,
   FETCH_LOGOUT_USER_SUCCESS,
   FETCH_LOGOUT_USER_ERROR,
@@ -20,6 +27,12 @@ const initialState = {
 
 export default function (state = initialState, action) {
   switch (action.type) {
+    case SET_TOKEN:
+      return {
+        ...state,
+        token: action.payload,
+      };
+
     case FETCH_LOGIN_USER:
       return {
         ...state,
@@ -39,7 +52,25 @@ export default function (state = initialState, action) {
       return {
         ...state,
         loginLoading: false,
-        loginError: true,
+      };
+
+    case FETCH_VERIFY_USER:
+      return {
+        ...state,
+        verifyLoading: true,
+      };
+
+    case FETCH_VERIFY_USER_SUCCESS:
+      return {
+        ...state,
+        verifyLoading: false,
+        authenticated: true,
+      };
+
+    case FETCH_VERIFY_USER_ERROR:
+      return {
+        ...state,
+        verifyLoading: false,
       };
 
     case FETCH_LOGOUT_USER:
