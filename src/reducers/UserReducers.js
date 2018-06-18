@@ -15,6 +15,7 @@ const initialState = {
   logoutError: false,
 
   authenticated: false,
+  token: '',
 };
 
 export default function (state = initialState, action) {
@@ -31,6 +32,7 @@ export default function (state = initialState, action) {
         ...state,
         loginLoading: false,
         authenticated: true,
+        token: action.payload.token,
       };
 
     case FETCH_LOGIN_USER_ERROR:

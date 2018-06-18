@@ -11,9 +11,9 @@ class Dashboard extends PureComponent {
   render() {
     const { authenticated } = this.props;
 
-    // if (!authenticated) {
-    //   return <Redirect to="/login" />;
-    // }
+    if (!authenticated) {
+      return <Redirect to="/login" />;
+    }
 
     return (
       <div className="layout__container">
