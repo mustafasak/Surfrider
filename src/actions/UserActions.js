@@ -3,6 +3,9 @@ import moment from 'moment';
 import {
   API_BASE
 } from "../config/app";
+import {
+  EINPROGRESS
+} from 'constants';
 
 export const FETCH_LOGIN_USER = '@@USER//FETCH_LOGIN';
 export const FETCH_LOGIN_USER_SUCCESS = '@@USER//FETCH_LOGIN_SUCCESS';
@@ -12,9 +15,7 @@ export const FETCH_VERIFY_USER = '@@USER//FETCH_VERIFY';
 export const FETCH_VERIFY_USER_SUCCESS = '@@USER//FETCH_VERIFY_SUCCESS';
 export const FETCH_VERIFY_USER_ERROR = '@@USER//FETCH_VERIFY_ERROR';
 
-export const FETCH_LOGOUT_USER = '@@USER//FETCH_LOGOUT';
-export const FETCH_LOGOUT_USER_SUCCESS = '@@USER//FETCH_LOGOUT_SUCCESS';
-export const FETCH_LOGOUT_USER_ERROR = '@@USER//FETCH_LOGOUT_ERROR';
+export const LOGOUT_USER = '@@USER//LOGOUT';
 
 export const SET_TOKEN = '@@USER//SET_TOKEN';
 
@@ -42,9 +43,11 @@ export const loginUser = (email, password) => async (dispatch) => {
       payload: data,
     });
   } catch (error) {
+    const data = await error.json();
+
     dispatch({
       type: FETCH_LOGIN_USER_ERROR,
-      payload: error,
+      payload: data,
     });
   }
 }
@@ -98,5 +101,12 @@ export const verifyUser = () => async (dispatch) => {
       type: FETCH_VERIFY_USER_ERROR,
     });
   }
+}
 
+export const logoutUser = () => (dispatch) => {
+  localStorage.removeItem('auth');
+
+  dispatch({
+    type: LOGOUT_USER,
+  });
 }

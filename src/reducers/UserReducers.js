@@ -9,17 +9,17 @@ import {
   FETCH_VERIFY_USER_SUCCESS,
   FETCH_VERIFY_USER_ERROR,
 
-  FETCH_LOGOUT_USER,
-  FETCH_LOGOUT_USER_SUCCESS,
-  FETCH_LOGOUT_USER_ERROR,
+  LOGOUT_USER,
 } from '../actions/UserActions';
 
 const initialState = {
   loginLoading: false,
-  logoutLoading: false,
+  verifyLoading: false,
 
   loginError: false,
-  logoutError: false,
+  verifyError: false,
+
+  loginErrorMessage: '',
 
   authenticated: false,
   token: '',
@@ -39,6 +39,7 @@ export default function (state = initialState, action) {
         ...state,
         loginLoading: true,
         loginError: false,
+        loginErrorMessage: '',
       };
 
     case FETCH_LOGIN_USER_SUCCESS:
@@ -60,6 +61,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         loginLoading: false,
+        loginErrorMessage: action.payload.message,
       };
 
     case FETCH_VERIFY_USER:
@@ -88,25 +90,11 @@ export default function (state = initialState, action) {
         verifyLoading: false,
       };
 
-    case FETCH_LOGOUT_USER:
+    case LOGOUT_USER:
       return {
         ...state,
-        logoutLoading: true,
-        logoutError: false,
-      };
-
-    case FETCH_LOGOUT_USER_SUCCESS:
-      return {
-        ...state,
-        logoutLoading: false,
         authenticated: false,
-      };
-
-    case FETCH_LOGOUT_USER_ERROR:
-      return {
-        ...state,
-        logoutLoading: false,
-        logoutError: true,
+        user: {},
       };
 
     default:
