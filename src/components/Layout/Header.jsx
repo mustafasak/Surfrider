@@ -1,6 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Header = () => (
+import { userShape } from '../../config/shapes/user';
+
+const Header = ({ user }) => (
   <header className="layout__header">
     <input type="text" placeholder="&#xF002;" className="search" />
 
@@ -25,14 +28,28 @@ const Header = () => (
         className="header__navbar-item header__navbar-item--user"
         data-toggle="dropdown"
       >
-        <img className="icon icon-user" src="/img/user.png" alt="User" />
+        <img
+          className="icon icon-user"
+          src={user.avatar || '/img/user.png'}
+          alt="User"
+        />
         <span className="header__user-info">
-          <span className="header__user-name">James Page</span>
-          <span className="header__user-title">Administrateur</span>
+          <span className="header__user-name">
+            {user.firstName && user.lastName
+              ? `${user.firstName} ${user.lastName}`
+              : user.email}
+          </span>
+          {user.isAdmin && (
+            <span className="header__user-title">Administrateur</span>
+          )}
         </span>
       </button>
     </nav>
   </header>
 );
+
+Header.propTypes = {
+  user: PropTypes.shape(userShape).isRequired,
+};
 
 export default Header;

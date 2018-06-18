@@ -23,6 +23,7 @@ const initialState = {
 
   authenticated: false,
   token: '',
+  user: {},
 };
 
 export default function (state = initialState, action) {
@@ -46,6 +47,13 @@ export default function (state = initialState, action) {
         loginLoading: false,
         authenticated: true,
         token: action.payload.token,
+        user: {
+          email: action.payload.user.email,
+          firstName: action.payload.user.firstName,
+          lastName: action.payload.user.lastName,
+          avatar: action.payload.user.avatar,
+          isAdmin: action.payload.user.isAdmin,
+        }
       };
 
     case FETCH_LOGIN_USER_ERROR:
@@ -65,6 +73,13 @@ export default function (state = initialState, action) {
         ...state,
         verifyLoading: false,
         authenticated: true,
+        user: {
+          email: action.payload.email,
+          firstName: action.payload.firstName,
+          lastName: action.payload.lastName,
+          avatar: action.payload.avatar,
+          isAdmin: action.payload.isAdmin,
+        }
       };
 
     case FETCH_VERIFY_USER_ERROR:

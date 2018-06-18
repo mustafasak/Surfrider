@@ -71,13 +71,14 @@ export const verifyUser = () => async (dispatch) => {
       });
 
       try {
-        await fetch(`${API_BASE}/auth/verify`, {
+        const data = await fetch(`${API_BASE}/auth/me`, {
             method: 'POST'
           })
           .then(response => response.json());
 
         dispatch({
           type: FETCH_VERIFY_USER_SUCCESS,
+          payload: data,
         });
       } catch (error) {
         localStorage.removeItem('auth');
