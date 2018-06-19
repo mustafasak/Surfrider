@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { NavLink } from 'react-router-dom';
 
 import { logoutUser } from '../../actions/UserActions';
+import { chapterShape } from '../../config/shapes/chapter';
 
 import '../../assets/css/Layout/Sidebar.css';
 
@@ -20,6 +21,8 @@ class Sidebar extends PureComponent {
   }
 
   render() {
+    const { chapters } = this.props;
+
     return (
       <aside className="layout__sidebar">
         <section className="Sidebar">
@@ -34,7 +37,6 @@ class Sidebar extends PureComponent {
             <NavLink
               to="/"
               exact
-              // strict
               className="Sidbar__navigation-item"
               activeClassName="Sidbar__navigation-item--active"
             >
@@ -49,14 +51,16 @@ class Sidebar extends PureComponent {
               <span className="Sidebar__icon Sidebar__icon--shop" />
               <span>Shop</span>
             </NavLink>
-            <NavLink
-              to="/antennes"
-              className="Sidbar__navigation-item"
-              activeClassName="Sidbar__navigation-item--active"
-            >
-              <span className="Sidebar__icon Sidebar__icon--antennes" />
-              <span>Antennes</span>
-            </NavLink>
+            {chapters.length > 0 ? (
+              <NavLink
+                to={`/antennes/${chapters[0].slug}`}
+                className="Sidbar__navigation-item"
+                activeClassName="Sidbar__navigation-item--active"
+              >
+                <span className="Sidebar__icon Sidebar__icon--antennes" />
+                <span>Antennes</span>
+              </NavLink>
+            ) : null}
             <NavLink
               to="/surfrider"
               className="Sidbar__navigation-item"
@@ -116,8 +120,13 @@ class Sidebar extends PureComponent {
 }
 
 Sidebar.propTypes = {
+  chapters: PropTypes.arrayOf(PropTypes.shape(chapterShape)).isRequired,
   logoutUser: PropTypes.func.isRequired,
 };
+
+const mapStateToProps = state => ({
+  chapters: state.chapter.chapters,
+});
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators(
@@ -129,7 +138,7 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps,
   null,
   { pure: false },

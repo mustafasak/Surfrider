@@ -1,4 +1,51 @@
 .SubSidebar__chapters {
   display: flex;
   flex-direction: column;
+  padding: 120px 10px;
+}
+
+.SubSidebar__chapter-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 10px;
+  margin: 5px 0;
+  background-color: #efefef;
+  color: #4a4a4a;
+}
+
+.SubSidebar__chapter-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  left: calc(50%);
+  background-color: var(--color-primary);
+  transition: left .3s ease, width .3s ease;
+}
+
+.SubSidebar__chapter-item.SubSidebar__chapter-item--active::after {
+  left: 0;
+  width: 100%;
+}
+
+.SubSidebar__chapter-name {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.SubSidebar__chapter-location {
+  font-size: .8em;
+}
+
+.layout__container.layout__container--sub-sidebar .SubSidebar__chapters {
+  opacity: 1;
+  transition: opacity .3s ease .5s, font-size .3s ease;
+}
+
+.layout__container:not(.layout__container--sub-sidebar) .SubSidebar__chapters {
+  opacity: 0;
+  font-size: 0;
+  transition: opacity .3s ease, font-size .3s ease .3s;
 }

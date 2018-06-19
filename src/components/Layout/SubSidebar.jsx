@@ -28,7 +28,10 @@ class SubSidebar extends PureComponent {
                 className="SubSidebar__chapter-item"
                 activeClassName="SubSidebar__chapter-item--active"
               >
-                <span>{chapter.name}</span>
+                <span className="SubSidebar__chapter-name">{chapter.name}</span>
+                <span className="SubSidebar__chapter-location">
+                  {chapter.city}, {chapter.country}
+                </span>
               </NavLink>
             ))}
           </div>
@@ -59,4 +62,6 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
+  null,
+  { pure: false },
 )(SubSidebar);
