@@ -1,0 +1,112 @@
+.Login {
+    display: flex;
+    height: 100%;
+}
+
+.Login .Login__container {
+    max-width: 600px;
+}
+
+.Login [class^="Login__container-"] {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.Login .Login__container-left {
+    background: url('/img/Login__background.png');
+    background-size: cover;
+    position: relative;
+}
+
+.Login .Login__container-left .Login__logo {
+    z-index: 1;
+    text-align: center;
+    color: white;
+}
+
+.Login .Login__container-left .Login__logo img {
+    padding: 30px;
+    width: 203px;
+}
+
+.Login .Login__container-left .Login__logo figcaption {
+    text-transform: uppercase;
+    display: none;
+}
+
+.Login .Login__container-right {
+    background: url('/img/Login__background.svg');
+    background-size: cover;
+}
+
+.Login__form {
+    min-width: 380px;
+}
+
+.Login__form h2 {
+    margin-bottom: 1.5em;
+}
+
+.Login__form .Login__input {
+    margin-bottom: 2em;
+    position: relative;
+    min-width: 300px;
+}
+
+.Login__form .Login__input label {
+    display: block;
+}
+
+.Login__form .Login__input label input {
+    width: 100%;
+    padding: 1em 0 3px;
+    border: 0;
+    border-bottom: 1px solid var(--color-grey-light);
+    outline: none;
+    font-size: 1em;
+    background: transparent;
+}
+
+.Login__form .Login__input label span {
+    pointer-events: none;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    color: var(--color-grey);
+    transition: all .3s cubic-bezier(0.4,0,0.2,1);
+    transition-property: font-size,color,transform;
+}
+
+.Login__form .Login__input label.focussed span {
+    transform: translateY(-25px);
+    font-size: 0.75em;
+    color: var(--color-primary);
+    left: 0;
+}
+
+.Login__form .Login__input label.focussed input {
+    border-bottom: 1px solid var(--color-primary);
+}
+
+.Login__form .Login__submit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Login__form .Login__submit input {
+    background-color: var(--color-primary);
+    padding: 1.125em 6em;
+    color: var(--color-white);
+    border: 0;
+    border-radius: 2px;
+    text-transform: uppercase;
+}
+
+.Login__form .Login__submit input:disabled {
+    opacity: 0.3;
+}
