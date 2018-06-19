@@ -10,19 +10,20 @@ import Gestion from '../Pages/Gestion';
 import Dons from '../Pages/Dons';
 import Event from '../Pages/Event';
 import Actus from '../Pages/Actus';
-import Login from '../Pages/Login';
 
 const Content = () => (
   <div className="layout__main-wrapper">
-    <Route exact path="/" component={Home} />
-    <Route exact path="/shop" component={Shop} />
-    <Route exact path="/antennes" component={Antennes} />
-    <Route exact path="/surfrider" component={Surfrider} />
-    <Route exact path="/outils" component={Outils} />
-    <Route exact path="/gestion" component={Gestion} />
-    <Route exact path="/dons" component={Dons} />
-    <Route exact path="/event" component={Event} />
-    <Route exact path="/actus" component={Actus} />
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route path="/shop" component={Shop} />
+      <Route path="/antennes" component={Antennes} />
+      <Route path="/surfrider" component={Surfrider} />
+      <Route path="/outils" component={Outils} />
+      <Route path="/gestion" component={Gestion} />
+      <Route path="/dons" component={Dons} />
+      <Route path="/event" component={Event} />
+      <Route path="/actus" component={Actus} />
+    </Switch>
   </div>
 );
 

@@ -1,0 +1,152 @@
+.Sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 35px 0;
+}
+
+.Sidebar__logo-container {
+  margin-bottom: 35px;
+}
+
+.Sidebar__logo {
+  width: 100px;
+  border-radius: 50%;
+  background-color: #FFF;
+  padding: 10px;
+  box-shadow: 0px 0px 30px 1px #cfcfcf;
+}
+
+.Sidebar__navigation {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.Sidbar__navigation-item {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  color: #4a4a4a;
+}
+
+.Sidbar__navigation-item.Sidbar__navigation-item--active {
+  color: #00bfac;
+}
+
+.Sidbar__navigation-item.Sidbar__navigation-item--active .Sidebar__icon {
+  color: #00bfac;
+}
+
+.Sidebar__icon {
+  display: block;
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+  color: #4a4a4a;
+}
+
+.Sidebar__icon.Sidebar__icon--social {
+  background: url('../../img/menu/social/unselected.svg') no-repeat center center;
+}
+
+.Sidbar__navigation-item.Sidbar__navigation-item--active .Sidebar__icon.Sidebar__icon--social {
+  background: url('../../img/menu/social/selected.svg') no-repeat center center;
+}
+
+.Sidebar__icon.Sidebar__icon--shop {
+  background: url('../../img/menu/shop/unselected.svg') no-repeat center center;
+}
+
+.Sidbar__navigation-item.Sidbar__navigation-item--active .Sidebar__icon.Sidebar__icon--shop {
+  background: url('../../img/menu/shop/selected.svg') no-repeat center center;
+}
+
+.Sidebar__icon.Sidebar__icon--antennes {
+  background: url('../../img/menu/antennes/unselected.svg') no-repeat center center;
+}
+
+.Sidbar__navigation-item.Sidbar__navigation-item--active .Sidebar__icon.Sidebar__icon--antennes {
+  background: url('../../img/menu/antennes/selected.svg') no-repeat center center;
+}
+
+.Sidebar__icon.Sidebar__icon--site {
+  background: url('../../img/menu/site/unselected.svg') no-repeat center center;
+}
+
+.Sidbar__navigation-item.Sidbar__navigation-item--active .Sidebar__icon.Sidebar__icon--site {
+  background: url('../../img/menu/site/selected.svg') no-repeat center center;
+}
+
+.Sidebar__icon.Sidebar__icon--outils {
+  background: url('../../img/menu/outils/unselected.svg') no-repeat center center;
+}
+
+.Sidbar__navigation-item.Sidbar__navigation-item--active .Sidebar__icon.Sidebar__icon--outils {
+  background: url('../../img/menu/outils/selected.svg') no-repeat center center;
+}
+
+.Sidebar__icon.Sidebar__icon--utilisateurs {
+  background: url('../../img/menu/utilisateurs/unselected.svg') no-repeat center center;
+}
+
+.Sidbar__navigation-item.Sidbar__navigation-item--active .Sidebar__icon.Sidebar__icon--utilisateurs {
+  background: url('../../img/menu/utilisateurs/selected.svg') no-repeat center center;
+}
+
+.Sidebar__icon.Sidebar__icon--dons {
+  background: url('../../img/menu/dons/unselected.svg') no-repeat center center;
+}
+
+.Sidbar__navigation-item.Sidbar__navigation-item--active .Sidebar__icon.Sidebar__icon--dons {
+  background: url('../../img/menu/dons/selected.svg') no-repeat center center;
+}
+
+.Sidebar__icon.Sidebar__icon--event {
+  background: url('../../img/menu/event/unselected.svg') no-repeat center center;
+}
+
+.Sidbar__navigation-item.Sidbar__navigation-item--active .Sidebar__icon.Sidebar__icon--event {
+  background: url('../../img/menu/event/selected.svg') no-repeat center center;
+}
+
+.Sidebar__icon.Sidebar__icon--actu {
+  background: url('../../img/menu/actu/unselected.svg') no-repeat center center;
+}
+
+.Sidbar__navigation-item.Sidbar__navigation-item--active .Sidebar__icon.Sidebar__icon--actu {
+  background: url('../../img/menu/actu/selected.svg') no-repeat center center;
+}
+
+.Sidebar__logout button {
+  border-radius: 25px;
+  border: 2px solid #00bfac;
+  padding: 5px 25px;
+  color: #00bfac;
+  cursor: pointer;
+  transition: color .3s ease, background-color .3s ease;
+}
+
+.Sidebar__logout button:hover {
+  color: #ffffff;
+  background-color: #00bfac;
+}
+
+/* Small sidebar */
+
+.layout__container.layout__container--small .Sidebar__logo {
+  width: 50px;
+}
+
+.layout__container.layout__container--small .Sidbar__navigation-item span:not(.Sidebar__icon) {
+  display: none;
+}
+
+.layout__container.layout__container--small .Sidebar__icon {
+  margin-right: 0;
+}
+
+.layout__container.layout__container--small .Sidebar__logout {
+  display: none;
+}

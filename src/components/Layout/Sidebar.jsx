@@ -2,9 +2,11 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { logoutUser } from '../../actions/UserActions';
+
+import '../../assets/css/Layout/Sidebar.css';
 
 class Sidebar extends PureComponent {
   constructor() {
@@ -20,79 +22,91 @@ class Sidebar extends PureComponent {
   render() {
     return (
       <aside className="layout__sidebar">
-        <section className="sidebar">
-          <div>
-            <a href="#">
-              <img src="/img/logo.png" className="logo" alt="logo" />
-            </a>
+        <section className="Sidebar">
+          <div className="Sidebar__logo-container">
+            <img
+              src="/img/logo.png"
+              className="Sidebar__logo"
+              alt="Surfrider logo"
+            />
           </div>
-          <nav className="nav-sidebar">
-            <ul>
-              <li>
-                <Link to="/">
-                  <img
-                    className="icon"
-                    src="/img/menu/social/unselected.svg"
-                    alt="Social Surfrider icon"
-                  />
-                  <span>Social Surfrider</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="shop">
-                  <img
-                    className="icon"
-                    src="/img/menu/shop/unselected.svg"
-                    alt="Social Surfrider icon"
-                  />
-                  <span>Shop</span>
-                </Link>
-              </li>
-              <li>
-                <a href="#">
-                  <img
-                    className="icon"
-                    src="/img/menu/antennes/unselected.svg"
-                  />Antennes
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img className="icon" src="/img/menu/site/unselected.svg" />Surfrider.eu
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img className="icon" src="/img/menu/outils/unselected.svg" />Outils
-                  Marketing
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img
-                    className="icon"
-                    src="/img/menu/utilisateurs/unselected.svg"
-                  />Gestion des utilisateurs
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img className="icon" src="/img/menu/dons/unselected.svg" />Dons
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img className="icon" src="/img/menu/event/unselected.svg" />Evenements
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img className="icon" src="/img/menu/actu/unselected.svg" />Actus
-                </a>
-              </li>
-            </ul>
+          <nav className="Sidebar__navigation">
+            <NavLink
+              to="/"
+              exact
+              // strict
+              className="Sidbar__navigation-item"
+              activeClassName="Sidbar__navigation-item--active"
+            >
+              <span className="Sidebar__icon Sidebar__icon--social" />
+              <span>Social Surfrider</span>
+            </NavLink>
+            <NavLink
+              to="/shop"
+              className="Sidbar__navigation-item"
+              activeClassName="Sidbar__navigation-item--active"
+            >
+              <span className="Sidebar__icon Sidebar__icon--shop" />
+              <span>Shop</span>
+            </NavLink>
+            <NavLink
+              to="/antennes"
+              className="Sidbar__navigation-item"
+              activeClassName="Sidbar__navigation-item--active"
+            >
+              <span className="Sidebar__icon Sidebar__icon--antennes" />
+              <span>Antennes</span>
+            </NavLink>
+            <NavLink
+              to="/surfrider"
+              className="Sidbar__navigation-item"
+              activeClassName="Sidbar__navigation-item--active"
+            >
+              <span className="Sidebar__icon Sidebar__icon--site" />
+              <span>Surfrider.eu</span>
+            </NavLink>
+            <NavLink
+              to="/outils"
+              className="Sidbar__navigation-item"
+              activeClassName="Sidbar__navigation-item--active"
+            >
+              <span className="Sidebar__icon Sidebar__icon--outils" />
+              <span>Outils Marketing</span>
+            </NavLink>
+            <NavLink
+              to="/gestion"
+              className="Sidbar__navigation-item"
+              activeClassName="Sidbar__navigation-item--active"
+            >
+              <span className="Sidebar__icon Sidebar__icon--utilisateurs" />
+              <span>Gestion des utilisateurs</span>
+            </NavLink>
+            <NavLink
+              to="/dons"
+              className="Sidbar__navigation-item"
+              activeClassName="Sidbar__navigation-item--active"
+            >
+              <span className="Sidebar__icon Sidebar__icon--dons" />
+              <span>Dons</span>
+            </NavLink>
+            <NavLink
+              to="/evenements"
+              className="Sidbar__navigation-item"
+              activeClassName="Sidbar__navigation-item--active"
+            >
+              <span className="Sidebar__icon Sidebar__icon--event" />
+              <span>Evenements</span>
+            </NavLink>
+            <NavLink
+              to="/actus"
+              className="Sidbar__navigation-item"
+              activeClassName="Sidbar__navigation-item--active"
+            >
+              <span className="Sidebar__icon Sidebar__icon--actu" />
+              <span>Actus</span>
+            </NavLink>
           </nav>
-          <div className="connect">
+          <div className="Sidebar__logout">
             <button onClick={this.handleLogout}>Se déconnecter</button>
           </div>
         </section>
@@ -117,4 +131,6 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   null,
   mapDispatchToProps,
+  null,
+  { pure: false },
 )(Sidebar);

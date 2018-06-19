@@ -9,17 +9,20 @@
   width: 250px;
   height: 100%;
   background-color: #f8f8f8;
+  transition: width .3s ease;
 }
 
 .layout__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 50px;
 }
 
 .layout__main {
   padding: 25px;
   margin-left: 250px;
+  transition: margin-left .3s ease;
 }
 
 .header__navbar {
@@ -61,4 +64,14 @@
 
 .header__user-title {
   font-size: .8em;
+}
+
+/* Small sidebar */
+
+.layout__container.layout__container--small .layout__sidebar {
+  width: 75px;
+}
+
+.layout__container.layout__container--small .layout__main {
+  margin-left: 75px;
 }
