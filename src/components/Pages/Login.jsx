@@ -43,14 +43,14 @@ class Login extends Component {
 
     return (
       <div className="Login">
-        <div className="Login__container-left">
+        <div className="Login__container Login__container--left">
           <figure className="Login__logo">
             <img src="/img/Logo__white.svg" alt="Surfrider logo" />
             <figcaption>Dashboard Surfrider</figcaption>
           </figure>
           <div className="Global__Filter" />
         </div>
-        <div className="Login__container-right">
+        <div className="Login__container Login__container--right">
           <div className="Login__form">
             <h2>Connexion</h2>
             {loginError ? <span>{errorMessage}</span> : null}
@@ -99,6 +99,7 @@ class Login extends Component {
                 <input
                   type="submit"
                   value="Connexion"
+                  className="Button"
                   /* disabled={email === '' || password === ''} */
                 />
                 <a href="#" title="#">
