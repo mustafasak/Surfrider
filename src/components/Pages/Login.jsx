@@ -28,6 +28,7 @@ class Login extends Component {
   render() {
     return (
       <div className="Login">
+      <img src="/img/logo.png" className="logo" alt="logo" />
         {/* <form onSubmit={this.handleSubmit}> */}
         <form>
           <FormGroup controlId="email" bsSize="large">
@@ -53,8 +54,11 @@ class Login extends Component {
             disabled={!this.validateForm()}
             type="submit"
           >
-            Login
+            Connexion
           </Button>
+          <div className="forget">
+            <a href="#">J'ai oublié mon mot de passe</a>
+          </div>
         </form>
       </div>
     );
