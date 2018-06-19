@@ -49,46 +49,74 @@ class Sidebar extends PureComponent {
                 </Link>
               </li>
               <li>
-                <a href="#">
+                <Link to="antennes">
                   <img
                     className="icon"
                     src="/img/menu/antennes/unselected.svg"
-                  />Antennes
-                </a>
+                    alt="Antennes icon"
+                  />
+                  <span>Antennes</span>
+                </Link>
               </li>
               <li>
-                <a href="#">
-                  <img className="icon" src="/img/menu/site/unselected.svg" />Surfrider.eu
-                </a>
+                <Link to="surfrider">
+                  <img
+                    className="icon"
+                    src="/img/menu/site/unselected.svg"
+                    alt="Surfrider.eu icon"
+                  />
+                  <span>Surfrider.eu</span>
+                </Link>
               </li>
               <li>
-                <a href="#">
-                  <img className="icon" src="/img/menu/outils/unselected.svg" />Outils
-                  Marketing
-                </a>
+                <Link to="outils">
+                  <img
+                    className="icon"
+                    src="/img/menu/outils/unselected.svg"
+                    alt="Outils marketing icon"
+                  />
+                  <span>Outils Marketing</span>
+                </Link>
               </li>
               <li>
-                <a href="#">
+                <Link to="gestion">
                   <img
                     className="icon"
                     src="/img/menu/utilisateurs/unselected.svg"
-                  />Gestion des utilisateurs
-                </a>
+                    alt="Gestion des utilisateurs icon"
+                  />
+                  <span>Gestion des utilisateurs</span>
+                </Link>
               </li>
               <li>
-                <a href="#">
-                  <img className="icon" src="/img/menu/dons/unselected.svg" />Dons
-                </a>
+                <Link to="dons">
+                  <img
+                    className="icon"
+                    src="/img/menu/dons/unselected.svg"
+                    alt="Dons icon"
+                  />
+                  <span>Gestion des utilisateurs</span>
+                </Link>
               </li>
               <li>
-                <a href="#">
-                  <img className="icon" src="/img/menu/event/unselected.svg" />Evenements
-                </a>
+                <Link to="event">
+                  <img
+                    className="icon"
+                    src="/img/menu/event/unselected.svg"
+                    alt="Evenements icon"
+                  />
+                  <span>Evenements</span>
+                </Link>
               </li>
               <li>
-                <a href="#">
-                  <img className="icon" src="/img/menu/actu/unselected.svg" />Actus
-                </a>
+                <Link to="actus">
+                  <img
+                    className="icon"
+                    src="/img/menu/actu/unselected.svg"
+                    alt="Actus icon"
+                  />
+                  <span>Actus</span>
+                </Link>
               </li>
             </ul>
           </nav>

@@ -8,6 +8,7 @@ import './helpers/fetchHelpers';
 
 import './index.css';
 import './assets/css/layout.css';
+import './assets/css/tab.css';
 
 import App from './App';
 import store from './store';

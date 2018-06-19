@@ -2,7 +2,6 @@ import React from 'react';
 
 const Home = () => (
   <div>
-    <h2>Social Surfrider</h2>
     <div className="block-1">
     <div className="container-fluid">
     <div className="row">
