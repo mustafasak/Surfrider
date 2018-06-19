@@ -61,6 +61,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         loginLoading: false,
+        loginError: true,
         loginErrorMessage: action.payload.message,
       };
 

@@ -29,11 +29,16 @@ class Login extends Component {
   }
 
   render() {
-    const { authenticated } = this.props;
+    const { authenticated, loginError, loginErrorMessage } = this.props;
     const { email, password, emailFocussed, passwordFocussed } = this.state;
+    let errorMessage = 'Une erreur est survenue';
 
     if (authenticated) {
       return <Redirect to="/" />;
+    }
+
+    if (loginError && loginErrorMessage.length > 0) {
+      errorMessage = loginErrorMessage;
     }
 
     return (
@@ -48,6 +53,7 @@ class Login extends Component {
         <div className="Login__container-right">
           <div className="Login__form">
             <h2>Connexion</h2>
+            {loginError ? <span>{errorMessage}</span> : null}
             <form onSubmit={this.onSubmit}>
               <div className="Login__input">
                 <label
@@ -111,11 +117,15 @@ class Login extends Component {
 
 Login.propTypes = {
   authenticated: PropTypes.bool.isRequired,
+  loginError: PropTypes.bool.isRequired,
+  loginErrorMessage: PropTypes.string.isRequired,
   loginUser: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
   authenticated: state.user.authenticated,
+  loginError: state.user.loginError,
+  loginErrorMessage: state.user.loginErrorMessage,
 });
 
 const mapDispatchToProps = dispatch => {
