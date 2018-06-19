@@ -9,7 +9,7 @@
   width: 250px;
   height: 100%;
   background-color: #f8f8f8;
-  transition: width .3s ease;
+  transition: width .3s ease .3s;
 }
 
 .layout__header {
@@ -22,7 +22,7 @@
 .layout__main {
   padding: 25px;
   margin-left: 250px;
-  transition: margin-left .3s ease;
+  transition: margin-left .3s ease .3s;
 }
 
 .header__navbar {
