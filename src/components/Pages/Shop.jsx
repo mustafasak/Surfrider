@@ -8,7 +8,11 @@ const Shop = () => (
         <div className="row">
           <div className="col-md-12 subtitle">
             <p>Nombre d'articles vendus</p>
-            <img src="img/dot-option.png"/>
+            <button id="more-btn" className="more-btn">
+              <span className="more-dot"></span>
+              <span className="more-dot"></span>
+              <span className="more-dot"></span>
+            </button>
           </div>
           <div className="col-md-12">
             <img src="img/chart.png"/>
@@ -22,11 +26,16 @@ const Shop = () => (
           </div>
         </div>
       </article>
+
 	    <article className="module desktop tablet-2">
         <div className="row">
           <div className="col-md-12 subtitle">
             <p>Valeurs totale des ventes (CA)</p>
-            <img src="img/dot-option.png"/>
+            <button id="more-btn" className="more-btn">
+              <span className="more-dot"></span>
+              <span className="more-dot"></span>
+              <span className="more-dot"></span>
+            </button>
           </div>
           <div className="col-md-12">
             <img src="img/chart.png"/>
@@ -40,16 +49,21 @@ const Shop = () => (
           </div>
         </div>
       </article>
+
 	    <article className="module desktop tablet-1">
         <div className="row">
           <div className="col-md-12 subtitle">
             <p>Répartition des ventes</p>
-            <img src="img/dot-option.png"/>
+            <button id="more-btn" className="more-btn">
+              <span className="more-dot"></span>
+              <span className="more-dot"></span>
+              <span className="more-dot"></span>
+            </button>
           </div>
           <div className="col-md-12">
             <img src="img/chart.png"/>
           </div>
-          <div className="col-md-12">
+          <div className="col-md-12 list-info">
             <ul className="info-chart">
               <li className="men">Homme</li>
               <li className="women">Femme</li>
@@ -63,8 +77,12 @@ const Shop = () => (
      <div className="block-1">
       <div className="row">
         <div className="col-md-4">
-          <div className="vente">
-            <p>Répartition des ventes</p>
+          <div> 
+            <ul className="info-vente">
+              <li><p className="vente">Gestions des stocks</p></li>
+              <li className="stock">En stock</li>
+              <li className="vendu">Volume total vendu</li>
+            </ul>
           </div>
         </div>
         <div className="col-md-4">
@@ -73,13 +91,17 @@ const Shop = () => (
           </div>
         </div>
         <div className="col-md-4">
-          <div className="">
-          </div>
+          <button id="more-btn" className="more-btn">
+            <span className="more-dot"></span>
+            <span className="more-dot"></span>
+            <span className="more-dot"></span>
+          </button>
         </div>
       </div>
      </div>
-
      
+    
+
   </div>
 );
 

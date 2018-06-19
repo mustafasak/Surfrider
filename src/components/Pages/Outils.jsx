@@ -8,7 +8,11 @@ const Outils = () => (
         <div className="row">
           <div className="col-md-12 subtitle">
           <p>Réseaux sociaux</p>
-          <img src="img/dot-option.png"/>
+            <button id="more-btn" className="more-btn">
+                <span className="more-dot"></span>
+                <span className="more-dot"></span>
+                <span className="more-dot"></span>
+            </button>
           </div>
         </div>
       </article>
@@ -16,7 +20,11 @@ const Outils = () => (
         <div className="row">
           <div className="col-md-12 subtitle">
           <p>Newsletters</p>
-          <img src="img/dot-option.png"/>
+            <button id="more-btn" className="more-btn">
+                <span className="more-dot"></span>
+                <span className="more-dot"></span>
+                <span className="more-dot"></span>
+            </button>
           </div>
         </div>
       </article>
@@ -24,7 +32,11 @@ const Outils = () => (
         <div className="row">
           <div className="col-md-12 subtitle">
           <p>Affiche/flyers</p>
-          <img src="img/dot-option.png"/>
+            <button id="more-btn" className="more-btn">
+                <span className="more-dot"></span>
+                <span className="more-dot"></span>
+                <span className="more-dot"></span>
+            </button>
         </div>
         </div>
       </article>

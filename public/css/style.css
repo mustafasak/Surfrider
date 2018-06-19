@@ -537,6 +537,38 @@ aside.main-sidebar {
   }
 }
 
+.more-btn,
+.more-menu-btn {
+  background: none;
+  border: 0 none;
+  line-height: normal;
+  overflow: visible;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  text-align: left;
+  outline: none;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 5px;
+}
+
+.more-dot {
+  background-color: #00bfac;
+  margin: 0 auto;
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-right: 2px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.list-info{
+  text-align: center;
+}
+
 .info-chart{
   list-style: none;
   display: inline-flex;
@@ -544,27 +576,32 @@ aside.main-sidebar {
 
 ul.info-chart{
   margin: 0;
-  padding-left: 15px;
 }
 
 .info-chart li{
   padding: 5px;
+  color:#9b9b9b;
+  font-style: italic;
+  font-size: 12px;
 }
 
 .men::before {
   content: "◉"; 
   color: #80e1d7; 
+  font-style:initial;
   padding-right: 5px;
 }
 
 .women::before {
   content: "◉"; 
+  font-style:initial;
   color: #d49f15; 
   padding-right: 5px;}
 
 .accessories::before {
   content: "◉"; 
   color: #307994; 
+  font-style:initial;
   padding-right: 5px;
 }
 
@@ -574,9 +611,12 @@ ul.info-chart{
   border-radius: 50px;
   background-color: #F0F0F0;
   border: none;
-  font-size:16px;
-  font-family:Arial, FontAwesome;
+  font-size: 16px;
+  font-family: Arial, FontAwesome;
   text-align: right;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .vente{
@@ -584,5 +624,41 @@ ul.info-chart{
   font-weight: 300;
   color: #4a4a4a;
   font-size: 18px;
+  font-style: initial;
+}
+
+.info-vente{
+  list-style: none;
+  display: inline-flex;
+}
+
+ul.info-vente{
+  padding: 0;
+  margin: 0;
+}
+
+.info-vente li{
+  color:#9b9b9b;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.stock, .vendu{
+  margin-left: 14px;
+  margin-top: 7px;
+}
+
+.stock::before {
+  content: "◉"; 
+  color: #d49f15; 
+  font-style:initial;
+  padding-right: 5px;
+}
+
+.vendu::before {
+  content: "◉"; 
+  color: #9b9b9b; 
+  font-style:initial;
+  padding-right: 5px;
 }
 

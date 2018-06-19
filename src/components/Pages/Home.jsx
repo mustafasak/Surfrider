@@ -52,7 +52,11 @@ const Home = () => (
           <div className="row">
             <div className="col-md-12 subtitle">
               <p>Classement des dons</p>
-              <img src="img/dot-option.png"/>
+              <button id="more-btn" className="more-btn">
+                <span className="more-dot"></span>
+                <span className="more-dot"></span>
+                <span className="more-dot"></span>
+              </button>
             </div>
           </div>
           <div className="row">
@@ -93,7 +97,11 @@ const Home = () => (
           <div className="row">
             <div className="col-md-12 subtitle">
               <p>Classement des participations aux événements</p>
-              <img src="img/dot-option.png"/>
+              <button id="more-btn" className="more-btn">
+                <span className="more-dot"></span>
+                <span className="more-dot"></span>
+                <span className="more-dot"></span>
+              </button>
             </div>
           </div>
           <div className="row">
@@ -134,7 +142,11 @@ const Home = () => (
           <div className="row">
             <div className="col-md-12 subtitle">
               <p>Classement du nombre d'événements organisés</p>
-              <img src="img/dot-option.png"/>
+              <button id="more-btn" className="more-btn">
+                <span className="more-dot"></span>
+                <span className="more-dot"></span>
+                <span className="more-dot"></span>
+              </button>
             </div>
           </div>
           <div className="row">
@@ -175,7 +187,11 @@ const Home = () => (
           <div className="row">
             <div className="col-md-12 subtitle">
               <p>Classement des antennes/dons</p>
-              <img src="img/dot-option.png"/>
+              <button id="more-btn" className="more-btn">
+                <span className="more-dot"></span>
+                <span className="more-dot"></span>
+                <span className="more-dot"></span>
+              </button>
             </div>
           </div>
           <div className="row">
