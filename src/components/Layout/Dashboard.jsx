@@ -8,6 +8,7 @@ import Sidebar from './Sidebar';
 import Content from './Content';
 
 import { userShape } from '../../config/shapes/user';
+import SubSidebar from './SubSidebar';
 
 class Dashboard extends PureComponent {
   render() {
@@ -18,13 +19,16 @@ class Dashboard extends PureComponent {
     }
 
     const isDashboardHome = location.pathname === '/';
+    const isDashboardChapter = location.pathname === '/antennes';
 
     return (
       <div
-        className={`layout__container ${isDashboardHome ||
-          'layout__container--small'}`}
+        className={`layout__container ${
+          isDashboardHome ? '' : 'layout__container--small'
+        } ${isDashboardChapter ? 'layout__container--sub-sidebar' : ''}`}
       >
         <Sidebar />
+        <SubSidebar />
         <div className="layout__main">
           <Header user={user} />
           <Content />

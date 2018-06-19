@@ -3,9 +3,6 @@ import moment from 'moment';
 import {
   API_BASE
 } from "../config/app";
-import {
-  EINPROGRESS
-} from 'constants';
 
 export const FETCH_LOGIN_USER = '@@USER//FETCH_LOGIN';
 export const FETCH_LOGIN_USER_SUCCESS = '@@USER//FETCH_LOGIN_SUCCESS';

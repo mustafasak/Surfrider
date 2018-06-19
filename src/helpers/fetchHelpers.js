@@ -10,10 +10,12 @@ const unregister = fetchIntercept.register({
       }
     } = store.getState();
 
+    const headersCopy = config && config.headers ? config.headers : {};
+
     return ([url, {
       ...config,
       headers: {
-        ...config.headers,
+        ...headersCopy,
         'Authorization': `Bearer ${token}`,
         'Accept': 'application/json',
         'Content-Type': 'application/json',

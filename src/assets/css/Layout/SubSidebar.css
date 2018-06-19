@@ -1,0 +1,4 @@
+.SubSidebar__chapters {
+  display: flex;
+  flex-direction: column;
+}

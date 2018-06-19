@@ -9,6 +9,17 @@
   width: 250px;
   height: 100%;
   background-color: #f8f8f8;
+  z-index: 2;
+  transition: width .3s ease .3s;
+}
+
+.layout__sub-sidebar {
+  position: fixed;
+  left: 75px;
+  flex-shrink: 0;
+  width: 0;
+  height: 100%;
+  background-color: #fbfbfb;
   transition: width .3s ease .3s;
 }
 
@@ -20,8 +31,11 @@
 }
 
 .layout__main {
+  flex-grow: 1;
   padding: 25px;
   margin-left: 250px;
+  background-color: #ffffff;
+  z-index: 1;
   transition: margin-left .3s ease .3s;
 }
 
@@ -74,4 +88,14 @@
 
 .layout__container.layout__container--small .layout__main {
   margin-left: 75px;
+}
+
+/* Sub sidebar */
+
+.layout__container.layout__container--sub-sidebar .layout__sub-sidebar {
+  width: 175px;
+}
+
+.layout__container.layout__container--sub-sidebar .layout__main {
+  margin-left: 250px;
 }
