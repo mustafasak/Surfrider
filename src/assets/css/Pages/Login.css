@@ -4,7 +4,6 @@
 }
 
 .Login .Login__container {
-    max-width: 600px;
     width: 50%;
     display: flex;
     align-items: center;
@@ -76,6 +75,18 @@
     color: var(--color-grey);
     transition: all .3s cubic-bezier(0.4,0,0.2,1);
     transition-property: font-size,color,transform;
+}
+
+.Login__form .Login__error {
+    color: var(--color-error);
+
+}
+.Login__form .Login__input label.error span {
+    color: var(--color-error);
+}
+
+.Login__form .Login__input label.error input {
+    border-bottom: 1px solid var(--color-error);
 }
 
 .Login__form .Login__input label.focussed span {
