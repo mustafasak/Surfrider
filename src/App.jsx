@@ -1,18 +1,57 @@
-import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import Header from './components/Layout/Header';
-import Sidebar from './components/Layout/Sidebar';
-import Content from './components/Layout/Content';
+import Loader from './components/Core/Loader';
+import Dashboard from './components/Layout/Dashboard';
+import Login from './components/Pages/Login';
 
-const App = () => (
-  <Router>
-    <div>
-      <Header />
-      <Sidebar />
-      <Content />
-    </div>
-  </Router>
-);
+import { verifyUser } from './actions/UserActions';
 
-export default App;
+class App extends PureComponent {
+  componentDidMount() {
+    this.props.verifyUser();
+  }
+
+  render() {
+    const { verifyLoading } = this.props;
+
+    if (verifyLoading) {
+      return <Loader />;
+    }
+
+    return (
+      <Router>
+        <Switch>
+          <Route exact path="/login" component={Login} />
+          <Route path="/" component={Dashboard} />
+        </Switch>
+      </Router>
+    );
+  }
+}
+
+App.propTypes = {
+  verifyLoading: PropTypes.bool.isRequired,
+  verifyUser: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = state => ({
+  verifyLoading: state.user.verifyLoading,
+});
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators(
+    {
+      verifyUser,
+    },
+    dispatch,
+  );
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(App);
