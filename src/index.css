@@ -3,12 +3,15 @@
 html {
     height: 100%;
     --color-primary: #00bfac;
+    --color-primary-dark: #017E71;
     --color-white: white;
     --color-black: black;
-    --color-shadow: rgba(0, 0, 0, 0.2);
     --color-grey: #4a4a4a;
     --color-grey-light: #a5a5a5;
+    --color-blue: #135168;
     --color-blue-dark: #103E4F;
+    --color-error: #F71B36;
+    --color-shadow: rgba(0, 0, 0, 0.2);
     font-family: 'Open Sans', sans-serif;
     font-size: 100%;
 }
@@ -47,7 +50,12 @@ h2 {
     color: var(--color-black)
 }
 
-.Global__Filter {
+a {
+    color: var(--color-grey);
+    text-decoration: underline;
+}
+
+.Global__filter {
     position: absolute;
     top: 0;
     left: 0;
@@ -55,4 +63,25 @@ h2 {
     height: 100%;
     z-index: 0;
     background: rgba(0, 0, 0, 0.6);
+}
+
+.Button {
+    cursor: pointer;
+    background-color: var(--color-primary);
+    padding: 1.125em 4em;
+    color: var(--color-white);
+    border: 0;
+    border-radius: 2em;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    box-shadow: -4px 5px 16px 0 rgba(0, 191, 172, 0.4);
+    transition: all 0.3s ease-out;
+    outline: none;
+}
+
+.Button:hover,
+.Button:focus {
+    background-color: var(--color-blue);
+    box-shadow: -4px 5px 16px 0 rgba(19, 81, 104, 0.4);
+    transition: all 0.3s ease-out;
 }

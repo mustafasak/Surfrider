@@ -28,6 +28,16 @@ class Login extends Component {
     this.props.loginUser(email, password);
   }
 
+  static getInputState(inputFocussed, input, loginError) {
+    if (loginError) {
+      return 'error';
+    } else if (inputFocussed || input !== '') {
+      return 'focussed';
+    }
+
+    return '';
+  }
+
   render() {
     const { authenticated, loginError, loginErrorMessage } = this.props;
     const { email, password, emailFocussed, passwordFocussed } = this.state;
@@ -43,22 +53,22 @@ class Login extends Component {
 
     return (
       <div className="Login">
-        <div className="Login__container-left">
+        <div className="Login__container Login__container--left">
           <figure className="Login__logo">
             <img src="/img/Logo__white.svg" alt="Surfrider logo" />
             <figcaption>Dashboard Surfrider</figcaption>
           </figure>
-          <div className="Global__Filter" />
+          <div className="Global__filter" />
         </div>
-        <div className="Login__container-right">
+        <div className="Login__container Login__container--right">
           <div className="Login__form">
             <h2>Connexion</h2>
-            {loginError ? <span>{errorMessage}</span> : null}
+            {loginError ? <p className="Login__error">{errorMessage}</p> : null}
             <form onSubmit={this.onSubmit}>
               <div className="Login__input">
                 <label
                   htmlFor="email"
-                  className={emailFocussed || email !== '' ? 'focussed' : ''}
+                  className={Login.getInputState(emailFocussed, email, !!loginError)}
                 >
                   <span>Adresse e-mail</span>
                   <input
@@ -77,9 +87,7 @@ class Login extends Component {
               <div className="Login__input">
                 <label
                   htmlFor="password"
-                  className={
-                    passwordFocussed || password !== '' ? 'focussed' : ''
-                  }
+                  className={Login.getInputState(passwordFocussed, password, !!loginError)}
                 >
                   <span>Saisissez le mot de passe</span>
                   <input
@@ -99,6 +107,7 @@ class Login extends Component {
                 <input
                   type="submit"
                   value="Connexion"
+                  className="Button"
                   /* disabled={email === '' || password === ''} */
                 />
                 <a href="#" title="#">
@@ -128,14 +137,12 @@ const mapStateToProps = state => ({
   loginErrorMessage: state.user.loginErrorMessage,
 });
 
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators(
+const mapDispatchToProps = dispatch => bindActionCreators(
     {
       loginUser,
     },
     dispatch,
   );
-};
 
 export default connect(
   mapStateToProps,
