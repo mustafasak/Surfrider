@@ -4,8 +4,10 @@
 }
 
 .layout__sidebar {
+  position: fixed;
   flex-shrink: 0;
   width: 250px;
+  height: 100%;
   background-color: #f8f8f8;
 }
 
@@ -17,6 +19,7 @@
 
 .layout__main {
   padding: 25px;
+  margin-left: 250px;
 }
 
 .header__navbar {

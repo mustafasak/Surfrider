@@ -11,15 +11,27 @@ import Login from './components/Pages/Login';
 import { verifyUser } from './actions/UserActions';
 
 class App extends PureComponent {
+  constructor() {
+    super();
+
+    this.state = { showLoader: true };
+  }
+
   componentDidMount() {
     this.props.verifyUser();
   }
 
   render() {
     const { verifyLoading } = this.props;
+    const { showLoader } = this.state;
 
-    if (verifyLoading) {
-      return <Loader />;
+    if (showLoader) {
+      return (
+        <Loader
+          loading={verifyLoading}
+          onFinish={() => this.setState({ showLoader: false })}
+        />
+      );
     }
 
     return (
