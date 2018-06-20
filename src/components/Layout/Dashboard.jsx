@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Redirect } from 'react-router-dom';
 
 import Header from './Header';
@@ -8,9 +9,13 @@ import Sidebar from './Sidebar';
 import Content from './Content';
 
 import { userShape } from '../../config/shapes/user';
-import SubSidebar from './SubSidebar';
+import { fetchMyChapters } from '../../actions/ChapterActions';
 
 class Dashboard extends PureComponent {
+  componentDidMount() {
+    this.props.fetchMyChapters();
+  }
+
   render() {
     const { authenticated, user, location } = this.props;
 
@@ -19,16 +24,14 @@ class Dashboard extends PureComponent {
     }
 
     const isDashboardHome = location.pathname === '/';
-    const isDashboardChapter = location.pathname.match(/\/antenne/g);
 
     return (
       <div
         className={`layout__container ${
           isDashboardHome ? '' : 'layout__container--small'
-        } ${isDashboardChapter ? 'layout__container--sub-sidebar' : ''}`}
+        }`}
       >
         <Sidebar />
-        <SubSidebar />
         <div className="layout__main">
           <Header user={user} />
           <Content />
@@ -43,6 +46,7 @@ Dashboard.propTypes = {
   authenticated: PropTypes.bool.isRequired,
   location: PropTypes.shape({ pathname: PropTypes.string.isRequired })
     .isRequired,
+  fetchMyChapters: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -50,7 +54,16 @@ const mapStateToProps = state => ({
   authenticated: state.user.authenticated,
 });
 
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators(
+    {
+      fetchMyChapters,
+    },
+    dispatch,
+  );
+};
+
 export default connect(
   mapStateToProps,
-  null,
+  mapDispatchToProps,
 )(Dashboard);

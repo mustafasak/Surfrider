@@ -89,13 +89,3 @@
 .layout__container.layout__container--small .layout__main {
   margin-left: 75px;
 }
-
-/* Sub sidebar */
-
-.layout__container.layout__container--sub-sidebar .layout__sub-sidebar {
-  width: 175px;
-}
-
-.layout__container.layout__container--sub-sidebar .layout__main {
-  margin-left: 250px;
-}

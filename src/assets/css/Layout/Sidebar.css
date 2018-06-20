@@ -156,6 +156,12 @@
   margin-right: 0;
 }
 
+.layout__container .Sidebar__logout {
+  opacity: 1;
+  transition: opacity .3s ease .3s, font-size .3s ease .3s;
+}
+
 .layout__container.layout__container--small .Sidebar__logout {
-  display: none;
+  opacity: 0;
+  font-size: 0;
 }
