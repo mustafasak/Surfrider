@@ -2,48 +2,89 @@ import React from 'react';
 
 const Home = () => (
   <div>
-    <div className="block-1">
-    <div className="container-fluid">
-    <div className="row">
-      <div className="col-md-2 info-mois">
-          <img alt="" src="/img/mois.png" />
-          <span>Antenne du mois</span>
-          <p>CÔTE BASQUE</p>
-      </div>
-      <div className="col-md-5">
-        <div className="info">
-          <img alt="" src="/img/icon-white/don-white.svg" />
-          <span>4712 € </span>
-          <p>de dons *</p>
-        </div>
-        <div className="info">
-          <img alt="" src="/img/icon-white/event-white.svg" />
-          <span>3 </span>
-          <p>événements organisés *</p>
-        </div>
-      </div>
-      <div className="col-md-5">
-        <div className="info">
-          <img alt="" src="/img/icon-white/adherent-white.svg" />
-          <span>512 </span>
-          <p>participations *</p>
-        </div>
-        <div className="info">
-          <img alt="" src="/img/icon-white/user-white.svg" />
-          <span>64 </span>
-          <p>nouveaux adhérents *</p>
-        </div>
-      </div>
-    </div>
-    </div>
-    <div className="container-fluid">
+
+    <div className="block-top">
+      <div className="container-fluid">
         <div className="row">
-          <div className="col-md-12 block-stat">
-            <button className="stats">LES STATS DE L'ANTENNE</button>
-            <p>* Chiffres calculés sur le mois M-1</p>
+          <div className="col-md-12 subtitle">
+            <p>Prochain événements</p>
+            <button className="mois">CE MOIS-CI<span className="arrow arrow-bottom"></span></button>
+          </div>
+          <div className="block-event">
+            <div className="subtitle">
+              <p><img alt="" src="/img/icon-yellow/event-yellow.svg" />Prochain événements</p>
+            </div>
+            <div className="date-event">
+              <ul>
+                <li>
+                  <img alt="" src="/img/dechet-1.jpg" />
+                  <span>12 juillet 2018 - Antenne Hendaye</span>
+                  <p>Nettoyage de la plage chef de baie</p>
+                </li>
+                <li>
+                  <img alt="" src="/img/dechet-2.jpg" />
+                  <span>25 juillet 2018 - Antenne Bretagne</span>
+                  <p>Nettoyage de la plage chef de baie</p>
+                </li>
+                <li>
+                  <img alt="" src="/img/dechet-3.jpg" />
+                  <span>26 août 2018 - Antenne Biarritz</span>
+                  <p>Nettoyage de la plage chef de baie</p>
+                </li>
+              </ul>
+            </div>
+            <button>Plus d'évenements</button>
           </div>
         </div>
+      </div>
     </div>
+
+    <div className="block-1">
+      <div className="container-fluid">
+      <div className="row">
+        <div className="col-md-2 info-mois">
+            <img alt="" src="/img/mois.png" />
+            <span>Antenne du mois</span>
+            <p>CÔTE BASQUE</p>
+        </div>
+        <div className="col-md-5">
+          <div className="info">
+            <p>Dons récoltés *</p>
+            <div className="background-info">
+              <span><img alt="" src="/img/icon-yellow/don-yellow.svg" />4712 €</span>
+            </div>
+          </div>
+          <div className="info">
+            <p>Evénements organisés *</p>
+            <div className="background-info">
+              <span><img alt="" src="/img/icon-yellow/event-yellow.svg" />3</span>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-5">
+          <div className="info">
+            <p>Participations aux évenements *</p>
+            <div className="background-info">
+              <span><img alt="" src="/img/icon-yellow/adherent-yellow.svg" />512</span>
+            </div>
+          </div>
+          <div className="info">
+            <p>Nouveaux adhérents *</p>
+            <div className="background-info">
+              <span><img alt="" src="/img/icon-yellow/user-yellow.svg" />64</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div className="container-fluid">
+          <div className="row">
+            <div className="col-md-12 block-stat">
+              <button className="stats">LES STATS DE L'ANTENNE</button>
+              <p>* Chiffres calculés sur le mois M-1</p>
+            </div>
+          </div>
+      </div>
     </div>
 
     <div className="block-2">

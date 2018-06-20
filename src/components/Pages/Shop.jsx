@@ -14,10 +14,10 @@ const Shop = () => (
               <span className="more-dot"></span>
             </button>
           </div>
-          <div className="col-md-12">
+          <div className="col-md-12 chart">
             <img src="img/chart.png"/>
           </div>
-          <div className="col-md-12">
+          <div className="col-md-12 list-info">
             <ul className="info-chart">
               <li className="men">Homme</li>
               <li className="women">Femme</li>
@@ -37,10 +37,10 @@ const Shop = () => (
               <span className="more-dot"></span>
             </button>
           </div>
-          <div className="col-md-12">
+          <div className="col-md-12 chart">
             <img src="img/chart.png"/>
           </div>
-          <div className="col-md-12">
+          <div className="col-md-12 list-info">
             <ul className="info-chart">
               <li className="men">Homme</li>
               <li className="women">Femme</li>
@@ -60,7 +60,7 @@ const Shop = () => (
               <span className="more-dot"></span>
             </button>
           </div>
-          <div className="col-md-12">
+          <div className="col-md-12 chart">
             <img src="img/chart.png"/>
           </div>
           <div className="col-md-12 list-info">
@@ -100,13 +100,13 @@ const Shop = () => (
           </button>
           </li>
           <li>
-          <div class="dropdown">
-            <button>Trier par<span class="arrow arrow-bottom"></span></button>
+          <div className="dropdown">
+            <button>Trier par<span className="arrow arrow-bottom"></span></button>
 			    </div>
           </li>
           <li>
-          <div class="dropdown">
-            <button>Filtres<span class="arrow arrow-bottom"></span></button>
+          <div className="dropdown">
+            <button>Filtres<span className="arrow arrow-bottom"></span></button>
 			    </div>
           </li>
         </ul>
@@ -124,7 +124,7 @@ const Shop = () => (
           </TabList>
 
           <TabPanel>
-          <table class="table table-hover">
+          <table className="table table-hover">
             <thead>
               <tr className="bloc-info">
                 <th></th>
@@ -199,7 +199,7 @@ const Shop = () => (
           </TabPanel>
 
           <TabPanel>
-          <table class="table table-hover">
+          <table className="table table-hover">
             <thead>
               <tr className="bloc-info">
                 <th></th>
@@ -274,7 +274,7 @@ const Shop = () => (
           </TabPanel>
 
           <TabPanel>
-          <table class="table table-hover">
+          <table className="table table-hover">
             <thead>
               <tr className="bloc-info">
                 <th></th>
@@ -349,7 +349,7 @@ const Shop = () => (
           </TabPanel>
 
           <TabPanel>
-          <table class="table table-hover">
+          <table className="table table-hover">
             <thead>
               <tr className="bloc-info">
                 <th></th>
@@ -424,7 +424,7 @@ const Shop = () => (
           </TabPanel>
 
           <TabPanel>
-          <table class="table table-hover">
+          <table className="table table-hover">
             <thead>
               <tr className="bloc-info">
                 <th></th>
@@ -500,7 +500,26 @@ const Shop = () => (
 
         </Tabs>
         </div>
-     </div>
+        <nav class="pagination-sm">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">3</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">4</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">5</a>
+            </li>
+          </ul>
+			  </nav>
+      </div>
      </div>
 
   </div>
