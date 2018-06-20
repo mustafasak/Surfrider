@@ -12,6 +12,7 @@
   margin: 5px 0;
   background-color: #efefef;
   color: #4a4a4a;
+  text-decoration: none;
 }
 
 .SubSidebar__chapter-item::after {

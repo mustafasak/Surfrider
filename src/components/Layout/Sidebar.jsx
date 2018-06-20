@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom';
 
 import { logoutUser } from '../../actions/UserActions';
 import { chapterShape } from '../../config/shapes/chapter';
+import { userShape } from '../../config/shapes/user';
 
 import '../../assets/css/Layout/Sidebar.css';
 
@@ -21,7 +22,7 @@ class Sidebar extends PureComponent {
   }
 
   render() {
-    const { chapters } = this.props;
+    const { chapters, user } = this.props;
 
     return (
       <aside className="layout__sidebar">
@@ -51,9 +52,9 @@ class Sidebar extends PureComponent {
               <span className="Sidebar__icon Sidebar__icon--shop" />
               <span>Shop</span>
             </NavLink>
-            {chapters.length > 0 ? (
+            {chapters.length > 0 || user.isAdmin ? (
               <NavLink
-                to={`/antennes/${chapters[0].slug}`}
+                to="/antennes"
                 className="Sidbar__navigation-item"
                 activeClassName="Sidbar__navigation-item--active"
               >
@@ -120,11 +121,13 @@ class Sidebar extends PureComponent {
 }
 
 Sidebar.propTypes = {
+  user: PropTypes.shape(userShape).isRequired,
   chapters: PropTypes.arrayOf(PropTypes.shape(chapterShape)).isRequired,
   logoutUser: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
+  user: state.user.user,
   chapters: state.chapter.chapters,
 });
 

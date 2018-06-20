@@ -21,6 +21,15 @@ class SubSidebar extends PureComponent {
       <aside className="layout__sub-sidebar">
         <section className="SubSidebar">
           <div className="SubSidebar__chapters">
+            <NavLink
+              to="/antennes"
+              exact
+              key="chapter-admin"
+              className="SubSidebar__chapter-item SubSidebar__chapter-item--admin"
+              activeClassName="SubSidebar__chapter-item--active"
+            >
+              <span className="SubSidebar__chapter-name">Surfrider Europe</span>
+            </NavLink>
             {chapters.map(chapter => (
               <NavLink
                 to={`/antennes/${chapter.slug}`}

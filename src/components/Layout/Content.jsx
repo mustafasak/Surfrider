@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import Home from '../Pages/Home';
 import Shop from '../Pages/Shop';
-import Chapter from '../Pages/Chapter';
+import Chapters from '../Pages/Chapters';
 import Surfrider from '../Pages/Surfrider';
 import Outils from '../Pages/Outils';
 import Gestion from '../Pages/Gestion';
@@ -16,7 +16,7 @@ const Content = () => (
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/shop" component={Shop} />
-      <Route path="/antennes/:slug" component={Chapter} />
+      <Route path="/antennes" component={Chapters} />
       <Route path="/surfrider" component={Surfrider} />
       <Route path="/outils" component={Outils} />
       <Route path="/gestion" component={Gestion} />
