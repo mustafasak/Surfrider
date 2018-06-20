@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { chapterShape } from '../../config/shapes/chapter';
-import ContentItem from "../Core/ContentItem";
-import ContentBloc from "../Core/ContentBloc";
+import ContentItem from '../Core/ContentItem';
+import ContentBloc from '../Core/ContentBloc';
 import Block from '../Core/Block';
-
 
 import Events from '../../data/events.json';
 import Actus from '../../data/actus.json';
@@ -23,38 +22,32 @@ class Chapter extends PureComponent {
     return (
       <div className="Chapter">
         <h2>Antenne de {chapter.name}</h2>
-        <div className="Chapter__container">
-          <Block
-            title="Dons"
-          >
-            <ContentBloc data={Dons} />
-          </Block>
-          <Block
-            title="Membres"
-          >
-            <ContentBloc data={Members} />
-          </Block>
-          <Block
-            title="Dernières missions"
-          >
-            {
-              Missions.map((item) => (<ContentItem key={item.id} item={item} />))
-            }
-          </Block>
-          <Block
-            title="Dernières actualités"
-          >
-            {
-              Actus.map((item) => (<ContentItem key={item.id} item={item} />))
-            }
-          </Block>
-          <Block
-            title="Derniers évènements"
-          >
-            {
-              Events.map((item) => (<ContentItem key={item.id} item={item} />))
-            }
-          </Block>
+        <div className="layout__grid">
+          <div className="layout__grid-item layout__grid-item--1/3">
+            <Block title="Dons">
+              <ContentBloc data={Dons} />
+            </Block>
+          </div>
+          <div className="layout__grid-item layout__grid-item--1/3">
+            <Block title="Membres">
+              <ContentBloc data={Members} />
+            </Block>
+          </div>
+          <div className="layout__grid-item layout__grid-item--1/3">
+            <Block title="Dernières missions">
+              {Missions.map(item => <ContentItem key={item.id} item={item} />)}
+            </Block>
+          </div>
+          <div className="layout__grid-item layout__grid-item--1/3">
+            <Block title="Dernières actualités">
+              {Actus.map(item => <ContentItem key={item.id} item={item} />)}
+            </Block>
+          </div>
+          <div className="layout__grid-item layout__grid-item--1/3">
+            <Block title="Derniers évènements">
+              {Events.map(item => <ContentItem key={item.id} item={item} />)}
+            </Block>
+          </div>
         </div>
       </div>
     );

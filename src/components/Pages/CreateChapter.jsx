@@ -45,8 +45,8 @@ class CreateChapter extends PureComponent {
 
     return (
       <div className="CreateChapter">
-        <form>
-          <div>
+        <form className="layout__grid">
+          <div className="layout__grid-item layout__grid-item--4/10">
             <Block title="Informations sur l'antenne">
               <InputField
                 label="Nom de l'antenne"
@@ -96,7 +96,7 @@ class CreateChapter extends PureComponent {
               />
             </Block>
           </div>
-          <div>
+          <div className="layout__grid-item layout__grid-item--4/10">
             <Block title="Informations sur le responsable">
               <InputField
                 label="Nom du responsabe"
@@ -128,7 +128,7 @@ class CreateChapter extends PureComponent {
               />
             </Block>
           </div>
-          <div>
+          <div className="layout__grid-item layout__grid-item--2/10">
             <Block title="Options">
               <div />
             </Block>

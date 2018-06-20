@@ -1,17 +1,17 @@
 .Block {
-    background: var(--color-white);
-    border-radius: 10px;
-    margin-bottom: 2em;
+  flex-grow: 1;
+  background: var(--color-white);
+  border-radius: 10px;
 }
 
 .Block header {
-    padding: 0.875em 1.5em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--color-white-dark);
+  padding: 0.875em 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-white-dark);
 }
 
 .Block header h3 {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }

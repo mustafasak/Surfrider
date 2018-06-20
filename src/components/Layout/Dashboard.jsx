@@ -17,20 +17,14 @@ class Dashboard extends PureComponent {
   }
 
   render() {
-    const { authenticated, user, location } = this.props;
+    const { authenticated, user } = this.props;
 
     if (!authenticated) {
       return <Redirect to="/login" />;
     }
 
-    const isDashboardHome = location.pathname === '/';
-
     return (
-      <div
-        className={`layout__container ${
-          isDashboardHome ? '' : 'layout__container--small'
-        }`}
-      >
+      <div className="layout__container">
         <Sidebar />
         <div className="layout__main">
           <Header user={user} />
@@ -44,8 +38,6 @@ class Dashboard extends PureComponent {
 Dashboard.propTypes = {
   user: PropTypes.shape(userShape).isRequired,
   authenticated: PropTypes.bool.isRequired,
-  location: PropTypes.shape({ pathname: PropTypes.string.isRequired })
-    .isRequired,
   fetchMyChapters: PropTypes.func.isRequired,
 };
 
