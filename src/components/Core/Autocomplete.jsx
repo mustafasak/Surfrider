@@ -8,19 +8,37 @@ class Autocomplete extends PureComponent {
   constructor(props) {
     super();
 
+    this.state = {
+      isFocussed: false,
+    };
+
     this.renderItems = this.renderItems.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
 
     this.debouncedOnSearch = debounce(props.onSearch, 300);
   }
 
   handleChange(event) {
-    this.debouncedOnSearch(event.target.value);
+    const {
+      target: { value },
+    } = event;
+
+    this.debouncedOnSearch(value);
   }
 
   handleClick(id) {
     this.props.onClick(id);
+  }
+
+  handleFocus() {
+    this.setState({ isFocussed: true });
+  }
+
+  handleBlur() {
+    this.setState({ isFocussed: false });
   }
 
   renderItems() {
@@ -43,16 +61,21 @@ class Autocomplete extends PureComponent {
 
   render() {
     const { placeholder } = this.props;
+    const { isFocussed } = this.state;
 
     return (
-      <div className="Autocmplete">
+      <div className="Autocomplete">
         <input
           className="Autocomplete__input"
           type="text"
           placeholder={placeholder}
           onChange={this.handleChange}
+          onFocus={this.handleFocus}
+          onBlur={this.handleBlur}
         />
-        <div className="Autocomplete__items">{this.renderItems()}</div>
+        {isFocussed && (
+          <div className="Autocomplete__items">{this.renderItems()}</div>
+        )}
       </div>
     );
   }
@@ -73,6 +96,7 @@ Autocomplete.propTypes = {
   ),
   onSearch: PropTypes.func.isRequired,
   onClick: PropTypes.func.isRequired,
+  onClear: PropTypes.func.isRequired,
 };
 
 export default Autocomplete;

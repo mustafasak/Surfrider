@@ -1,4 +1,4 @@
-.Autocmplete {
+.Autocomplete {
   position: relative;
 }
 
@@ -9,6 +9,7 @@
   border-radius: 25px;
   color: var(--color-black);
   font-size: .8em;
+  outline: none;
 }
 
 .Autocomplete__items {
@@ -16,6 +17,7 @@
   top: 100%;
   width: 100%;
   background-color: #FFFFFF;
+  z-index: 1;
 }
 
 .Autocomplete__items-container {

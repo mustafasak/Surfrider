@@ -1,0 +1,14 @@
+a[href^="http://maps.google.com/maps"] {
+  display: none !important
+}
+
+a[href^="https://maps.google.com/maps"] {
+  display: none !important
+}
+
+.gmnoprint a,
+.gmnoprint span,
+.gmnoprint .gm-style-mtc,
+.gm-style-cc {
+  display: none;
+}
