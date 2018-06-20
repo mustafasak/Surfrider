@@ -3,6 +3,7 @@ import React from 'react';
 const Outils = () => (
   <div>
   <div className="grid">
+  
     <article className="module desktop tablet-1">
       <div className="row">
         <div className="col-md-12 subtitle">
@@ -41,10 +42,9 @@ const Outils = () => (
         </div>
       </div>
     </article>
-  </div>
 
+  </div>
 </div>
 );
-
 
 export default Outils;
