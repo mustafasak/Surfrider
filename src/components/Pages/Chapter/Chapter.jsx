@@ -2,18 +2,19 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { chapterShape } from '../../config/shapes/chapter';
-import ContentItem from '../Core/ContentItem';
-import ContentBloc from '../Core/ContentBloc';
-import Block from '../Core/Block';
+import { chapterShape } from '../../../config/shapes/chapter';
 
-import Events from '../../data/events.json';
-import Actus from '../../data/actus.json';
-import Missions from '../../data/missions.json';
-import Members from '../../data/members.json';
-import Dons from '../../data/dons.json';
+import ContentItem from '../../Core/ContentItem';
+import ContentBloc from '../../Core/ContentBloc';
+import Block from '../../Core/Block';
 
-import '../../assets/css/Pages/Chapter.css';
+import Events from '../../../data/events.json';
+import Actus from '../../../data/actus.json';
+import Missions from '../../../data/missions.json';
+import Members from '../../../data/members.json';
+import Dons from '../../../data/dons.json';
+
+import '../../../assets/css/Pages/Chapter.css';
 
 class Chapter extends PureComponent {
   render() {

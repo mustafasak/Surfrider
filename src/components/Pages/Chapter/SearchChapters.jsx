@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
-import { chapterShape } from '../../config/shapes/chapter';
-import Autocomplete from '../Core/Autocomplete';
-import removeDiacritics from '../../helpers/generalHelpers';
+import { chapterShape } from '../../../config/shapes/chapter';
+import Autocomplete from '../../Core/Autocomplete';
+import removeDiacritics from '../../../helpers/generalHelpers';
 
-import ChapterMap from '../Core/ChapterMap';
+import ChapterMap from '../../Core/ChapterMap';
 
-import '../../assets/css/Pages/SearchChapters.css';
+import '../../../assets/css/Pages/SearchChapters.css';
 
 class SearchChapters extends PureComponent {
   constructor() {

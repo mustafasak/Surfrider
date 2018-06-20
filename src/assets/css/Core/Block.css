@@ -2,6 +2,7 @@
   flex-grow: 1;
   background: var(--color-white);
   border-radius: 10px;
+  box-shadow: 0 0 21px 0 rgba(19, 81, 104, 0.07);
 }
 
 .Block header {
@@ -14,4 +15,8 @@
 
 .Block header h3 {
   margin-bottom: 0;
+}
+
+.Block__content {
+  padding: 0.875em 1.5em;
 }

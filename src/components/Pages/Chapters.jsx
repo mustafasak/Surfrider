@@ -6,9 +6,9 @@ import { Redirect, Switch, Route } from 'react-router-dom';
 import { chapterShape } from '../../config/shapes/chapter';
 import { userShape } from '../../config/shapes/user';
 
-import SearchChapters from './SearchChapters';
-import Chapter from './Chapter';
-import CreateChapter from './CreateChapter';
+import SearchChapters from './Chapter/SearchChapters';
+import Chapter from './Chapter/Chapter';
+import CreateChapter from './Chapter/CreateChapter';
 
 class Chapters extends PureComponent {
   render() {
