@@ -34,7 +34,6 @@
   flex-grow: 1;
   padding: 25px;
   margin-left: 250px;
-  background: var(--color-blue-light);
   z-index: 1;
   transition: margin-left .3s ease .3s;
 }
