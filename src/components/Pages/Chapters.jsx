@@ -8,6 +8,7 @@ import { userShape } from '../../config/shapes/user';
 
 import SearchChapters from './SearchChapters';
 import Chapter from './Chapter';
+import CreateChapter from './CreateChapter';
 
 class Chapters extends PureComponent {
   render() {
@@ -21,6 +22,7 @@ class Chapters extends PureComponent {
       <div>
         <Switch>
           <Route exact path="/antennes" component={SearchChapters} />
+          <Route path="/antennes/creation" component={CreateChapter} />
           <Route path="/antennes/:slug" component={Chapter} />
         </Switch>
       </div>
