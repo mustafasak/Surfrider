@@ -1,8 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import removeDiacritics from '../../../helpers/generalHelpers';
+import { createChapter } from '../../../actions/ChapterActions';
 
 import Block from '../../Core/Block';
 import Input from '../../Form/Input';
@@ -38,6 +40,46 @@ class CreateChapter extends PureComponent {
       manageEvents: false,
       manageNews: false,
     };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(e) {
+    const {
+      name,
+      slug,
+      address,
+      postalCode,
+      city,
+      country,
+      lastName,
+      firstName,
+      email,
+      phoneNumber,
+      createWebsite,
+      manageWebsiteContent,
+      marketingTools,
+      manageUsers,
+      manageDonations,
+      manageEvents,
+      manageNews,
+    } = this.state;
+
+    e.preventDefault();
+
+    const formattedSlug =
+      slug.length > 0
+        ? slug
+        : removeDiacritics(name.toLowerCase().replace(/\s+/g, '-'));
+
+    this.props.createChapter(
+      name,
+      formattedSlug,
+      address,
+      postalCode,
+      city,
+      country,
+    );
   }
 
   render() {
@@ -77,7 +119,7 @@ class CreateChapter extends PureComponent {
           ]}
         />
 
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <div className="layout__grid">
             <div className="layout__grid-item layout__grid-item--4/10">
               <Block title="Informations sur l'antenne">
@@ -274,9 +316,19 @@ class CreateChapter extends PureComponent {
   }
 }
 
-CreateChapter.propTypes = {};
+CreateChapter.propTypes = {
+  createChapter: PropTypes.func.isRequired,
+};
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      createChapter,
+    },
+    dispatch,
+  );
 
 export default connect(
   null,
-  null,
+  mapDispatchToProps,
 )(CreateChapter);

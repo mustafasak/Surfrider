@@ -4,10 +4,9 @@
   all: unset;
   padding: 8px 20px;
   color: var(--color-primary);
-  border: 1px solid var(--color-primary);
+  border: 2px solid var(--color-primary);
   border-radius: 20px;
   text-transform: uppercase;
-  font-weight: 300;
   cursor: pointer;
   transition: all .3s ease;
 }
