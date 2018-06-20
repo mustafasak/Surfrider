@@ -6,10 +6,12 @@ html {
     --color-primary-dark: #017E71;
     --color-white: white;
     --color-black: black;
+    --color-white-dark: #F0F0F0;
     --color-grey: #4a4a4a;
     --color-grey-light: #a5a5a5;
     --color-blue: #135168;
     --color-blue-dark: #103E4F;
+    --color-blue-light: #F5F6FA;
     --color-error: #F71B36;
     --color-shadow: rgba(0, 0, 0, 0.2);
     font-family: 'Open Sans', sans-serif;
@@ -47,7 +49,18 @@ H4 {
 h2 {
     font-size: 1.5em;
     text-transform: uppercase;
-    color: var(--color-black)
+    color: var(--color-black);
+}
+
+h3 {
+    font-size: 1.25em;
+    color: var(--color-black);
+    font-weight: lighter;
+}
+
+h4 {
+    font-size: 1.125em;
+    font-weight: bold;
 }
 
 a {
