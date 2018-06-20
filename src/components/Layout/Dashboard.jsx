@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { Redirect } from 'react-router-dom';
 
 import Header from './Header';
@@ -9,13 +8,8 @@ import Sidebar from './Sidebar';
 import Content from './Content';
 
 import { userShape } from '../../config/shapes/user';
-import { fetchMyChapters } from '../../actions/ChapterActions';
 
 class Dashboard extends PureComponent {
-  componentDidMount() {
-    this.props.fetchMyChapters();
-  }
-
   render() {
     const { authenticated, user } = this.props;
 
@@ -25,9 +19,8 @@ class Dashboard extends PureComponent {
 
     return (
       <div className="layout__container">
-        <Sidebar />
+        <Sidebar user={user} />
         <div className="layout__main">
-          <Header user={user} />
           <Content />
         </div>
       </div>
@@ -38,7 +31,6 @@ class Dashboard extends PureComponent {
 Dashboard.propTypes = {
   user: PropTypes.shape(userShape).isRequired,
   authenticated: PropTypes.bool.isRequired,
-  fetchMyChapters: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -46,16 +38,7 @@ const mapStateToProps = state => ({
   authenticated: state.user.authenticated,
 });
 
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators(
-    {
-      fetchMyChapters,
-    },
-    dispatch,
-  );
-};
-
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  null,
 )(Dashboard);

@@ -54,14 +54,13 @@ const mapStateToProps = state => ({
   verifyLoading: state.user.verifyLoading,
 });
 
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators(
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
     {
       verifyUser,
     },
     dispatch,
   );
-};
 
 export default connect(
   mapStateToProps,

@@ -4,10 +4,11 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 import { chapterShape } from '../../../config/shapes/chapter';
-import Autocomplete from '../../Core/Autocomplete';
 import removeDiacritics from '../../../helpers/generalHelpers';
 
+import Autocomplete from '../../Core/Autocomplete';
 import ChapterMap from '../../Core/ChapterMap';
+import PageTitle from '../../Core/PageTitle';
 
 import '../../../assets/css/Pages/SearchChapters.css';
 
@@ -61,7 +62,14 @@ class SearchChapters extends PureComponent {
     return (
       <div className="SearchChapters">
         <div className="SearchChapters__header">
-          <h2 className="SearchChapters__title">Rechercher une antenne</h2>
+          <PageTitle
+            title="Rechercher une antenne"
+            path={[
+              {
+                label: 'Gestion des antennes',
+              },
+            ]}
+          />
           <div className="SearchChapters__search">
             <Autocomplete
               placeholder="Nom de l'antenne"

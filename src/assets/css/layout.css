@@ -32,7 +32,7 @@
 
 .layout__main {
   flex-grow: 1;
-  padding: 25px;
+  padding: 50px 25px;
   margin-left: 250px;
   z-index: 1;
   transition: margin-left .3s ease .3s;

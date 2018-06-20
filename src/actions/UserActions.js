@@ -4,6 +4,10 @@ import {
   API_BASE
 } from "../config/app";
 
+import {
+  fetchMyChapters
+} from './ChapterActions';
+
 export const FETCH_LOGIN_USER = '@@USER//FETCH_LOGIN';
 export const FETCH_LOGIN_USER_SUCCESS = '@@USER//FETCH_LOGIN_SUCCESS';
 export const FETCH_LOGIN_USER_ERROR = '@@USER//FETCH_LOGIN_ERROR';
@@ -75,6 +79,8 @@ export const verifyUser = () => async (dispatch) => {
             method: 'POST'
           })
           .then(response => response.json());
+
+        await dispatch(fetchMyChapters());
 
         dispatch({
           type: FETCH_VERIFY_USER_SUCCESS,
