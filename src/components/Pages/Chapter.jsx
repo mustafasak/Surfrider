@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { chapterShape } from '../../config/shapes/chapter';
-import ContentList from '../Core/ContentList';
+import ContentItem from "../Core/ContentItem";
+import ContentBloc from "../Core/ContentBloc";
+import Block from '../Core/Block';
+
+
 import Events from '../../data/events.json';
 import Actus from '../../data/actus.json';
 import Missions from '../../data/missions.json';
@@ -20,31 +24,37 @@ class Chapter extends PureComponent {
       <div className="Chapter">
         <h2>Antenne de {chapter.name}</h2>
         <div className="Chapter__container">
-          <ContentList
+          <Block
             title="Dons"
-            type="Bloc"
-            list={Dons}
-          />
-          <ContentList
+          >
+            <ContentBloc data={Dons} />
+          </Block>
+          <Block
             title="Membres"
-            type="Bloc"
-            list={Members}
-          />
-          <ContentList
+          >
+            <ContentBloc data={Members} />
+          </Block>
+          <Block
             title="Dernières missions"
-            type="Item"
-            list={Missions}
-          />
-          <ContentList
+          >
+            {
+              Missions.map((item) => (<ContentItem key={item.id} item={item} />))
+            }
+          </Block>
+          <Block
             title="Dernières actualités"
-            type="Item"
-            list={Actus}
-          />
-          <ContentList
+          >
+            {
+              Actus.map((item) => (<ContentItem key={item.id} item={item} />))
+            }
+          </Block>
+          <Block
             title="Derniers évènements"
-            type="Item"
-            list={Events}
-          />
+          >
+            {
+              Events.map((item) => (<ContentItem key={item.id} item={item} />))
+            }
+          </Block>
         </div>
       </div>
     );

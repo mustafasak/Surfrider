@@ -9,7 +9,10 @@ class Block extends PureComponent {
 
     return (
       <div className="Block">
-        <h3 className="Block__title">{title}</h3>
+        <header>
+          <h3 className="Block__title">{title}</h3>
+          <img className="Block__more" src="/img/Button__more.svg" alt="Tout voir" />
+        </header>
         <div className="Block__content">{children}</div>
       </div>
     );
