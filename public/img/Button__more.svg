@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>bouton/more/simple</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="CRM" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Gestion-de-contenu-/-home-Copy-2" transform="translate(-918.000000, -642.000000)">
+            <g id="Dernières-actualités" transform="translate(588.000000, 626.000000)">
+                <g id="bouton/more/simple" transform="translate(331.000000, 17.000000)">
+                    <circle id="Oval-3" stroke="#00BFAC" stroke-width="2" transform="translate(13.000000, 13.000000) scale(-1, 1) rotate(90.000000) translate(-13.000000, -13.000000) " cx="13" cy="13" r="13"></circle>
+                    <g id="bouton/back" stroke-width="1" fill-rule="evenodd" transform="translate(5.777778, 11.555556)" fill="#00BFAC">
+                        <circle id="Oval-3" transform="translate(1.805556, 1.805556) rotate(90.000000) translate(-1.805556, -1.805556) " cx="1.80555556" cy="1.80555556" r="1.80555556"></circle>
+                        <circle id="Oval-3-Copy" transform="translate(7.523148, 1.805556) rotate(90.000000) translate(-7.523148, -1.805556) " cx="7.52314815" cy="1.80555556" r="1.80555556"></circle>
+                        <circle id="Oval-3-Copy-2" transform="translate(12.638889, 1.805556) rotate(90.000000) translate(-12.638889, -1.805556) " cx="12.6388889" cy="1.80555556" r="1.80555556"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
