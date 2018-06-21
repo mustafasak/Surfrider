@@ -7,7 +7,7 @@ const Header = ({ user }) => (
   <header className="layout__header">
     <input type="text" placeholder="&#xF002;" className="search" />
 
-    <h1 className="title">Surfrider fondation europe</h1>
+    <h1 className="title">Social Surfrider</h1>
 
     <nav className="header__navbar">
       <button className="header__navbar-item" data-toggle="dropdown">

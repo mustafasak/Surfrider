@@ -68,7 +68,11 @@ class Login extends Component {
               <div className="Login__input">
                 <label
                   htmlFor="email"
-                  className={Login.getInputState(emailFocussed, email, !!loginError)}
+                  className={Login.getInputState(
+                    emailFocussed,
+                    email,
+                    !!loginError,
+                  )}
                 >
                   <span>Adresse e-mail</span>
                   <input
@@ -87,7 +91,11 @@ class Login extends Component {
               <div className="Login__input">
                 <label
                   htmlFor="password"
-                  className={Login.getInputState(passwordFocussed, password, !!loginError)}
+                  className={Login.getInputState(
+                    passwordFocussed,
+                    password,
+                    !!loginError,
+                  )}
                 >
                   <span>Saisissez le mot de passe</span>
                   <input
@@ -137,7 +145,8 @@ const mapStateToProps = state => ({
   loginErrorMessage: state.user.loginErrorMessage,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators(
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
     {
       loginUser,
     },
