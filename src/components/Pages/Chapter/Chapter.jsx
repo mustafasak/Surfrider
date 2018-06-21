@@ -44,32 +44,50 @@ class Chapter extends PureComponent {
         />
         <div className="layout__grid">
           <div className="layout__grid-item layout__grid-item--1/3">
-            <Block title="L'équipe de l'antenne">
+            <Block
+              title="L'équipe de l'antenne"
+              action={<img className="Block__more" src="/img/Button__more.svg" alt="Tout voir" />}
+            >
               <BlockLine />
             </Block>
           </div>
           <div className="layout__grid-item layout__grid-item--1/3">
-            <Block title="Dons">
+            <Block
+              title="Dons"
+              action={<img className="Block__more" src="/img/Button__more.svg" alt="Tout voir" />}
+            >
               {Dons.map((item) => (<BlockContent key={item.id} label={item.label} value={item.value} />))}
             </Block>
           </div>
           <div className="layout__grid-item layout__grid-item--1/3">
-            <Block title="Membres">
+            <Block
+              title="Membres"
+              action={<img className="Block__more" src="/img/Button__more.svg" alt="Tout voir" />}
+            >
               {Members.map((item) => (<BlockContent key={item.id} label={item.label} value={item.value} />))}
             </Block>
           </div>
           <div className="layout__grid-item layout__grid-item--1/3">
-            <Block title="Dernières missions">
+            <Block
+              title="Dernières missions"
+              action={<img className="Block__more" src="/img/Button__more.svg" alt="Tout voir" />}
+            >
               {Missions.map(item => <BlockItem key={item.id} item={item} />)}
             </Block>
           </div>
           <div className="layout__grid-item layout__grid-item--1/3">
-            <Block title="Dernières actualités">
+            <Block
+              title="Dernières actualités"
+              action={<img className="Block__more" src="/img/Button__more.svg" alt="Tout voir" />}
+            >
               {Actus.map(item => <BlockItem key={item.id} item={item} />)}
             </Block>
           </div>
           <div className="layout__grid-item layout__grid-item--1/3">
-            <Block title="Derniers évènements">
+            <Block
+              title="Derniers évènements"
+              action={<img className="Block__more" src="/img/Button__more.svg" alt="Tout voir" />}
+            >
               {Events.map(item => <BlockItem key={item.id} item={item} />)}
             </Block>
           </div>
