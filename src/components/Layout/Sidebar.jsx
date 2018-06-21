@@ -131,14 +131,13 @@ const mapStateToProps = state => ({
   chapters: state.chapter.chapters,
 });
 
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators(
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
     {
       logoutUser,
     },
     dispatch,
   );
-};
 
 export default connect(
   mapStateToProps,
