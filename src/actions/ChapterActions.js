@@ -80,8 +80,6 @@ export const createChapter = (
       }),
     }).then(response => response.json());
 
-    console.log(data)
-
     dispatch({
       type: FETCH_CREATE_CHAPTER_SUCCESS,
       payload: data,
@@ -89,9 +87,23 @@ export const createChapter = (
   } catch (error) {
     const data = await error.json();
 
+    const {
+      message
+    } = data;
+    let formattedMessage = {};
+
+    if (typeof message === 'object') {
+      formattedMessage = { ...message
+      };
+    } else {
+      formattedMessage = {
+        global: message
+      };
+    }
+
     dispatch({
       type: FETCH_CREATE_CHAPTER_ERROR,
-      payload: data,
+      payload: formattedMessage,
     });
   }
 }

@@ -14,6 +14,9 @@ const initialState = {
   chaptersError: false,
   createChapterError: false,
 
+  createChapterErrors: {},
+  createdChapter: null,
+
   chapters: [],
 };
 
@@ -45,12 +48,15 @@ export default function (state = initialState, action) {
         ...state,
         createChapterLoading: true,
         createChapterError: false,
+        createChapterErrors: {},
+        createdChapter: null,
       };
 
     case FETCH_CREATE_CHAPTER_SUCCESS:
       return {
         ...state,
         createChapterLoading: false,
+        createdChapter: action.payload,
         chapters: [
           ...state.chapters,
           action.payload
@@ -62,6 +68,7 @@ export default function (state = initialState, action) {
         ...state,
         createChapterLoading: false,
         createChapterError: false,
+        createChapterErrors: action.payload,
       };
 
     default:

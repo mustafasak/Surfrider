@@ -24,7 +24,7 @@ const unregister = fetchIntercept.register({
   },
 
   response: (response) => {
-    if (response.status === 403 || response.status === 401) {
+    if (response.status === 403 || response.status === 401 || response.status === 400) {
       return Promise.reject(response);
     }
 

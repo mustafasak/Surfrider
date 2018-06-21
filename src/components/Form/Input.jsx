@@ -12,14 +12,20 @@ class Input extends PureComponent {
       placeholder,
       value,
       disabled,
+      error,
       onChange,
     } = this.props;
 
     return (
-      <div className={`Input ${disabled ? 'Input--disabled' : ''}`}>
+      <div
+        className={`Input ${disabled ? 'Input--disabled' : ''} ${
+          error ? 'Input--error' : ''
+        }`}
+      >
         <label className="Input__label" htmlFor={name}>
           {label}
         </label>
+
         <input
           className="Input__input"
           type={type}
@@ -30,6 +36,8 @@ class Input extends PureComponent {
           disabled={disabled}
           onChange={onChange}
         />
+
+        {error && <span className="Input__error">{error}</span>}
       </div>
     );
   }
@@ -40,6 +48,7 @@ Input.defaultProps = {
   placeholder: '',
   value: '',
   disabled: false,
+  error: null,
 };
 
 Input.propTypes = {
@@ -49,6 +58,7 @@ Input.propTypes = {
   placeholder: PropTypes.string,
   value: PropTypes.string,
   disabled: PropTypes.bool,
+  error: PropTypes.string,
   onChange: PropTypes.func.isRequired,
 };
 

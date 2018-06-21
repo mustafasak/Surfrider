@@ -18,3 +18,13 @@
   border-radius: 20px;
   outline: none;
 }
+
+.Input--error .Input__input {
+  border-color: var(--color-error);
+}
+
+.Input__error {
+  color: var(--color-error);
+  font-size: .8rem;
+  margin: 0 15px;
+}
