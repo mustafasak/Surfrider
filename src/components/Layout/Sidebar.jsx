@@ -27,12 +27,31 @@ class Sidebar extends PureComponent {
     return (
       <aside className="layout__sidebar">
         <section className="Sidebar">
-          <div className="Sidebar__logo-container">
+          <div className="Sidebar__header">
+            <span className="Sidebar__logo" />
+            <div className="Sidebar__selector">
+              <span className="Sidebar__chapter">Surfrider Europe</span>
+              <span className="Sidebar__arrow" />
+            </div>
+          </div>
+          <div className="Sidebar__user">
             <img
-              src="/img/logo.png"
-              className="Sidebar__logo"
-              alt="Surfrider logo"
+              className="Sidebar__avatar"
+              src={user.avatar || '/img/user.png'}
+              alt="User avatar"
             />
+            <div className="Sidebar__user-info">
+              {user.firstName && user.lastName ? (
+                <span className="Sidebar__user-name">
+                  {user.firstName} {user.lastName}
+                </span>
+              ) : (
+                <span className="Sidebar__user-name">{user.email}</span>
+              )}
+              {user.isAdmin && (
+                <span className="Sidebar__user-group">Administrateur</span>
+              )}
+            </div>
           </div>
           <nav className="Sidebar__navigation">
             <NavLink
