@@ -19,6 +19,10 @@ class Block extends PureComponent {
   }
 }
 
+Block.defaultProps = {
+  action: null,
+};
+
 Block.propTypes = {
   title: PropTypes.string.isRequired,
   children: PropTypes.oneOfType([
@@ -26,9 +30,9 @@ Block.propTypes = {
     PropTypes.shape({}),
   ]).isRequired,
   action: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.shape({})),
-      PropTypes.shape({}),
-  ]).isRequired
+    PropTypes.arrayOf(PropTypes.shape({})),
+    PropTypes.shape({}),
+  ]),
 };
 
 export default Block;

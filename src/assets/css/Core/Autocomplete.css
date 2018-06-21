@@ -4,7 +4,8 @@
 
 .Autocomplete__input {
   min-width: 350px;
-  padding: 5px 10px;
+  padding: 10px 15px;
+  background-color: transparent;
   border: 2px solid var(--color-primary);
   border-radius: 25px;
   color: var(--color-black);
@@ -16,11 +17,36 @@
   position: absolute;
   top: 100%;
   width: 100%;
+  margin-top: 5px;
   background-color: #FFFFFF;
+  border: 2px solid var(--color-primary);
+  border-radius: 10px;
   z-index: 1;
 }
 
 .Autocomplete__items-container {
   display: flex;
   flex-direction: column;
+}
+
+.Autocomplete__item {
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: .8rem;
+}
+
+.Autocomplete__item:first-of-type {
+  border-radius: 10px 10px 0 0;
+}
+
+.Autocomplete__item:last-of-type {
+  border-radius: 0 0 10px 10px;
+}
+
+.Autocomplete__item:first-of-type:last-of-type {
+  border-radius: 10px;
+}
+
+.Autocomplete__item:hover {
+  background-color: #f8f8f8;
 }

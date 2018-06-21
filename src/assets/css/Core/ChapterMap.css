@@ -13,7 +13,27 @@ a[href^="https://maps.google.com/maps"] {
   display: none;
 }
 
-.SearchChapters__map  .gm-style {
+.SearchChapters__map .gm-style {
   box-shadow: var(--style-box-shadow);
   border-radius: var(--style-border-radius);
+}
+
+.ChapterMap__container {
+  border-radius: var(--style-border-radius);
+  box-shadow: var(--style-box-shadow);
+  overflow: hidden;
+}
+
+.Infobox__button {
+  padding: 2px 10px;
+  color: var(--color-primary);
+  font-size: .8rem;
+  border: 1px solid var(--color-primary);
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.Infobox__button:hover {
+  background-color: var(--color-primary);
+  color: #FFFFFF !important;
 }

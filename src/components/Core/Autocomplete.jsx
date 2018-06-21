@@ -18,7 +18,13 @@ class Autocomplete extends PureComponent {
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
 
+    this.blurTimeout = null;
+
     this.debouncedOnSearch = debounce(props.onSearch, 300);
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.blurTimeout);
   }
 
   handleChange(event) {
@@ -38,7 +44,9 @@ class Autocomplete extends PureComponent {
   }
 
   handleBlur() {
-    this.setState({ isFocussed: false });
+    this.blurTimeout = setTimeout(() => {
+      this.setState({ isFocussed: false });
+    }, 300);
   }
 
   renderItems() {
@@ -60,7 +68,7 @@ class Autocomplete extends PureComponent {
   }
 
   render() {
-    const { placeholder } = this.props;
+    const { placeholder, items } = this.props;
     const { isFocussed } = this.state;
 
     return (
@@ -73,9 +81,10 @@ class Autocomplete extends PureComponent {
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
         />
-        {isFocussed && (
-          <div className="Autocomplete__items">{this.renderItems()}</div>
-        )}
+        {isFocussed &&
+          items.length > 0 && (
+            <div className="Autocomplete__items">{this.renderItems()}</div>
+          )}
       </div>
     );
   }

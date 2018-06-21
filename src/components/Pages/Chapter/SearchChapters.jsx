@@ -81,8 +81,11 @@ class SearchChapters extends PureComponent {
               onClear={this.handleClear}
               onClick={this.handleClick}
             />
-            <NavLink to="/antennes/creation" className="SearchChapters__create">
-              <span className="Button">Créer une antenne</span>
+            <NavLink
+              to="/antennes/creation"
+              className="Button SearchChapters__create"
+            >
+              <span>Créer une antenne</span>
             </NavLink>
           </div>
         </div>
