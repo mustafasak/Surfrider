@@ -6,8 +6,9 @@ import { chapterShape } from '../../../config/shapes/chapter';
 
 import PageTitle from '../../Core/PageTitle';
 import Block from '../../Core/Block';
-import ContentItem from '../../Core/ContentItem';
-import ContentBloc from '../../Core/ContentBloc';
+import BlockLine from '../../Core/BlockLine';
+import BlockItem from '../../Core/BlockItem';
+import BlockContent from '../../Core/BlockContent';
 
 import Events from '../../../data/events.json';
 import Actus from '../../../data/actus.json';
@@ -43,28 +44,33 @@ class Chapter extends PureComponent {
         />
         <div className="layout__grid">
           <div className="layout__grid-item layout__grid-item--1/3">
+            <Block title="L'équipe de l'antenne">
+              <BlockLine />
+            </Block>
+          </div>
+          <div className="layout__grid-item layout__grid-item--1/3">
             <Block title="Dons">
-              <ContentBloc data={Dons} />
+              {Dons.map((item) => (<BlockContent key={item.id} label={item.label} value={item.value} />))}
             </Block>
           </div>
           <div className="layout__grid-item layout__grid-item--1/3">
             <Block title="Membres">
-              <ContentBloc data={Members} />
+              {Members.map((item) => (<BlockContent key={item.id} label={item.label} value={item.value} />))}
             </Block>
           </div>
           <div className="layout__grid-item layout__grid-item--1/3">
             <Block title="Dernières missions">
-              {Missions.map(item => <ContentItem key={item.id} item={item} />)}
+              {Missions.map(item => <BlockItem key={item.id} item={item} />)}
             </Block>
           </div>
           <div className="layout__grid-item layout__grid-item--1/3">
             <Block title="Dernières actualités">
-              {Actus.map(item => <ContentItem key={item.id} item={item} />)}
+              {Actus.map(item => <BlockItem key={item.id} item={item} />)}
             </Block>
           </div>
           <div className="layout__grid-item layout__grid-item--1/3">
             <Block title="Derniers évènements">
-              {Events.map(item => <ContentItem key={item.id} item={item} />)}
+              {Events.map(item => <BlockItem key={item.id} item={item} />)}
             </Block>
           </div>
         </div>

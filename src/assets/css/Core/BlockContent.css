@@ -1,9 +1,9 @@
-.ContentBlocItem {
+.BlockContent {
     padding: 0.875em 2em;
     color: var(--color-grey);
 }
 
-.ContentBlocItem .ContentBlocItem__value {
+.BlockContent .BlockContent__value {
     background: var(--color-white-dark);
     padding: 0.3em 1em;
     border-radius: 3em;

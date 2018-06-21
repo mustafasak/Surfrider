@@ -1,33 +1,33 @@
-.ContentItem {
+.BlockItem {
     display: flex;
     justify-content: space-between;
     padding: 0.875em 1.6em;
 }
 
-.ContentItem:last-child {
+.BlockItem:last-child {
     border-top: 1px solid var(--color-white-dark);
 }
 
-.ContentItem figure {
+.BlockItem .BlockItem__img {
     width: 30%;
     margin: 0;
 }
 
-.ContentItem figure img {
+.BlockItem .BlockItem__img img {
     max-width: 100%;
 }
 
-.ContentItem .ContentItem__container {
+.BlockItem .BlockItem__container {
     width: 65%;
     color: var(--color-grey);
 }
 
-.ContentItem .ContentItem__container p {
+.BlockItem .BlockItem__container .BlockItem__resume {
     font-size: 0.75em;
     margin-bottom: 0;
 }
 
-.ContentItem .ContentItem__container h4 + span {
+.BlockItem .BlockItem__container .BlockItem__title + .BlockItem__subTitle {
     font-family: "Oswald", sans-serif;
     font-size: 0.875em;
 }
