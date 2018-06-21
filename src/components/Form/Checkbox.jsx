@@ -5,16 +5,17 @@ import '../../assets/css/Form/Checkbox.css';
 
 class Checkbox extends PureComponent {
   render() {
-    const { label, name, value, onChange } = this.props;
+    const { label, name, value, disabled, onChange } = this.props;
 
     return (
-      <div className="Checkbox">
+      <div className={`Checkbox ${disabled ? 'Checkbox--disabled' : ''}`}>
         <label className="Checkbox__container" htmlFor={name}>
           <input
             className="Checkbox__input"
             type="checkbox"
             id={name}
             name={name}
+            disabled={disabled}
             defaultChecked={value}
             onChange={onChange}
           />
@@ -28,12 +29,14 @@ class Checkbox extends PureComponent {
 
 Checkbox.defaultProps = {
   value: false,
+  disabled: false,
 };
 
 Checkbox.propTypes = {
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   value: PropTypes.bool,
+  disabled: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
 };
 

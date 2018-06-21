@@ -5,10 +5,18 @@ import '../../assets/css/Form/Input.css';
 
 class Input extends PureComponent {
   render() {
-    const { label, name, type, placeholder, value, onChange } = this.props;
+    const {
+      label,
+      name,
+      type,
+      placeholder,
+      value,
+      disabled,
+      onChange,
+    } = this.props;
 
     return (
-      <div className="Input">
+      <div className={`Input ${disabled ? 'Input--disabled' : ''}`}>
         <label className="Input__label" htmlFor={name}>
           {label}
         </label>
@@ -19,6 +27,7 @@ class Input extends PureComponent {
           name={name}
           placeholder={placeholder}
           value={value}
+          disabled={disabled}
           onChange={onChange}
         />
       </div>
@@ -30,6 +39,7 @@ Input.defaultProps = {
   type: 'text',
   placeholder: '',
   value: '',
+  disabled: false,
 };
 
 Input.propTypes = {
@@ -38,6 +48,7 @@ Input.propTypes = {
   type: PropTypes.string,
   placeholder: PropTypes.string,
   value: PropTypes.string,
+  disabled: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
 };
 

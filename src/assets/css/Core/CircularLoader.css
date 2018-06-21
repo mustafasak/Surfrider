@@ -1,0 +1,64 @@
+.CircularLoader {
+  position: relative;
+  animation: circular-loader-1 4.8s linear infinite;
+}
+
+.CircularLoader span {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  height: 24px;
+  width: 24px;
+  clip: rect(0, 24px, 24px, 12px);
+  animation: circular-loader-2 1.2s linear infinite;
+}
+
+.CircularLoader span::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  height: 24px;
+  width: 24px;
+  clip: rect(0, 24px, 24px, 12px);
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  animation: circular-loader-3 1.2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+}
+
+@keyframes circular-loader-1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes circular-loader-2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(220deg);
+  }
+}
+
+@keyframes circular-loader-3 {
+  0% {
+    transform: rotate(-140deg);
+  }
+  50% {
+    transform: rotate(-160deg);
+  }
+  100% {
+    transform: rotate(140deg);
+  }
+}

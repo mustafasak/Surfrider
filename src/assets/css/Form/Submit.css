@@ -1,4 +1,6 @@
-.Submit {}
+.Submit {
+  position: relative;
+}
 
 .Submit__input {
   all: unset;
@@ -14,4 +16,20 @@
 .Submit__input:hover {
   color: #FFFFFF;
   background-color: var(--color-primary);
+}
+
+.Submit.Submit--loading .Submit__input {
+  padding-right: 50px;
+}
+
+.Submit__loader {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  height: 24px;
+  width: 24px;
+}
+
+.Submit:hover .CircularLoader span::after {
+  border-color: #FFFFFF;
 }

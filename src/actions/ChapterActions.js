@@ -33,7 +33,25 @@ export const fetchMyChapters = () => async (dispatch) => {
   }
 }
 
-export const createChapter = (name, slug, address, postalCode, city, country) => async (dispatch) => {
+export const createChapter = (
+  name,
+  slug,
+  address,
+  postalCode,
+  city,
+  country,
+  lastName,
+  firstName,
+  email,
+  phoneNumber,
+  createWebsite,
+  manageWebsiteContent,
+  marketingTools,
+  manageUsers,
+  manageDonations,
+  manageEvents,
+  manageNews,
+) => async (dispatch) => {
   dispatch({
     type: FETCH_CREATE_CHAPTER
   });
@@ -47,7 +65,18 @@ export const createChapter = (name, slug, address, postalCode, city, country) =>
         address,
         postalCode,
         city,
-        country
+        country,
+        lastName,
+        firstName,
+        email,
+        phoneNumber,
+        createWebsite,
+        manageWebsiteContent,
+        marketingTools,
+        manageUsers,
+        manageDonations,
+        manageEvents,
+        manageNews,
       }),
     }).then(response => response.json());
 

@@ -79,10 +79,22 @@ class CreateChapter extends PureComponent {
       postalCode,
       city,
       country,
+      lastName,
+      firstName,
+      email,
+      phoneNumber,
+      createWebsite,
+      manageWebsiteContent,
+      marketingTools,
+      manageUsers,
+      manageDonations,
+      manageEvents,
+      manageNews,
     );
   }
 
   render() {
+    const { createChapterLoading } = this.props;
     const {
       name,
       slug,
@@ -129,6 +141,7 @@ class CreateChapter extends PureComponent {
                     name="name"
                     placeholder="Exemple: Biarritz"
                     value={name}
+                    disabled={createChapterLoading}
                     onChange={e => this.setState({ name: e.target.value })}
                   />
                 </div>
@@ -144,6 +157,7 @@ class CreateChapter extends PureComponent {
                             name.toLowerCase().replace(/\s+/g, '-'),
                           )
                     }
+                    disabled={createChapterLoading}
                     onChange={e => this.setState({ slug: e.target.value })}
                   />
                 </div>
@@ -162,6 +176,7 @@ class CreateChapter extends PureComponent {
                     name="postalCode"
                     placeholder="Code postal de l'antenne"
                     value={postalCode}
+                    disabled={createChapterLoading}
                     onChange={e =>
                       this.setState({ postalCode: e.target.value })
                     }
@@ -182,6 +197,7 @@ class CreateChapter extends PureComponent {
                     name="country"
                     placeholder="Pays de l'antenne"
                     value={country}
+                    disabled={createChapterLoading}
                     onChange={e => this.setState({ country: e.target.value })}
                   />
                 </div>
@@ -204,6 +220,7 @@ class CreateChapter extends PureComponent {
                     name="firstName"
                     placeholder="Exemple: Jacques"
                     value={firstName}
+                    disabled={createChapterLoading}
                     onChange={e => this.setState({ firstName: e.target.value })}
                   />
                 </div>
@@ -213,6 +230,7 @@ class CreateChapter extends PureComponent {
                     name="firstName"
                     placeholder="Exemple: mail@exemple.fr"
                     value={email}
+                    disabled={createChapterLoading}
                     onChange={e => this.setState({ email: e.target.value })}
                   />
                 </div>
@@ -222,6 +240,7 @@ class CreateChapter extends PureComponent {
                     name="phoneNumber"
                     placeholder="Exemple: 0601010101"
                     value={phoneNumber}
+                    disabled={createChapterLoading}
                     onChange={e =>
                       this.setState({ phoneNumber: e.target.value })
                     }
@@ -236,6 +255,7 @@ class CreateChapter extends PureComponent {
                     label="Générer un site"
                     name="createWebsite"
                     value={createWebsite}
+                    disabled={createChapterLoading}
                     onChange={() =>
                       this.setState({ createWebsite: !createWebsite })
                     }
@@ -249,6 +269,7 @@ class CreateChapter extends PureComponent {
                     label="Gestion du contenu du site de l'antenne"
                     name="manageWebsiteContent"
                     value={manageWebsiteContent}
+                    disabled={createChapterLoading}
                     onChange={() =>
                       this.setState({
                         manageWebsiteContent: !manageWebsiteContent,
@@ -261,6 +282,7 @@ class CreateChapter extends PureComponent {
                     label="Outils marketing"
                     name="marketingTools"
                     value={marketingTools}
+                    disabled={createChapterLoading}
                     onChange={() =>
                       this.setState({ marketingTools: !marketingTools })
                     }
@@ -271,6 +293,7 @@ class CreateChapter extends PureComponent {
                     label="Gestion des utilisateurs"
                     name="manageUsers"
                     value={manageUsers}
+                    disabled={createChapterLoading}
                     onChange={() =>
                       this.setState({ manageUsers: !manageUsers })
                     }
@@ -291,6 +314,7 @@ class CreateChapter extends PureComponent {
                     label="Évènements"
                     name="manageEvents"
                     value={manageEvents}
+                    disabled={createChapterLoading}
                     onChange={() =>
                       this.setState({ manageEvents: !manageEvents })
                     }
@@ -301,6 +325,7 @@ class CreateChapter extends PureComponent {
                     label="Actus"
                     name="manageNews"
                     value={manageNews}
+                    disabled={createChapterLoading}
                     onChange={() => this.setState({ manageNews: !manageNews })}
                   />
                 </div>
@@ -308,7 +333,7 @@ class CreateChapter extends PureComponent {
             </div>
           </div>
           <div className="layout__grid layout__grid--justify-center layout__margin-vertical--medium">
-            <Submit label="Créer l'antenne" />
+            <Submit label="Créer l'antenne" loading={createChapterLoading} />
           </div>
         </form>
       </div>
@@ -317,8 +342,13 @@ class CreateChapter extends PureComponent {
 }
 
 CreateChapter.propTypes = {
+  createChapterLoading: PropTypes.bool.isRequired,
   createChapter: PropTypes.func.isRequired,
 };
+
+const mapStateToProps = state => ({
+  createChapterLoading: state.chapter.createChapterLoading,
+});
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
@@ -329,6 +359,6 @@ const mapDispatchToProps = dispatch =>
   );
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps,
 )(CreateChapter);
