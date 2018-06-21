@@ -14,6 +14,9 @@ import mapStyle from '../../config/mapStyle.json';
 
 import '../../assets/css/Core/ChapterMap.css';
 
+import Block from "./Block";
+import BlockContent from "./BlockContent";
+
 const ChapterMap = compose(
   withProps({
     googleMapURL:
@@ -30,7 +33,23 @@ class ChapterGoogleMap extends PureComponent {
   constructor() {
     super();
 
+    this.state = {
+      openMarker: ''
+    };
+
     this.renderMarkers = this.renderMarkers.bind(this);
+  }
+
+  onToggleOpen(id) {
+      this.setState({
+          openMarker : id
+      });
+  }
+
+  onCloseClick() {
+      this.setState({
+          openMarker : ''
+      });
   }
 
   renderMarkers() {
@@ -45,20 +64,20 @@ class ChapterGoogleMap extends PureComponent {
           <Marker
             key={chapter._id}
             position={{ lat: chapter.latitude, lng: chapter.longitude }}
+            className="Marker"
+            icon='/img/marker.png'
+            onClick={() => this.onToggleOpen(chapter._id)}
           >
-            <InfoBox options={{ enableEventPropagation: true }}>
-              <div
-                style={{
-                  backgroundColor: `yellow`,
-                  opacity: 0.75,
-                  padding: `12px`,
-                }}
+            {this.state.openMarker === chapter._id &&
+              <InfoBox
+                onCloseClick={() => this.onCloseClick}
+                options={{ enableEventPropagation: true }}
               >
-                <div style={{ fontSize: `16px`, fontColor: `#08233B` }}>
-                  {chapter.name}
-                </div>
-              </div>
-            </InfoBox>
+                <Block title={`Antenne de ${chapter.name}`} >
+                  <BlockContent label="Nom de l'antenne" value={chapter.name ? chapter.name : ''} />
+                  <BlockContent label="Adresse" value={chapter.address ? chapter.address : ''} />
+                </Block>
+              </InfoBox> }
           </Marker>
         ))}
       </div>
