@@ -1,4 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
+
+import EventsMap from '../Core/EventsMap';
 
 const Home = () => (
   <div>
@@ -36,6 +41,14 @@ const Home = () => (
             <button>Plus d'évenements</button>
           </div>
         </div>
+      </div>
+      <div className="events__map">
+        <EventsMap
+          googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+          defaultZoom={5}
+          defaultCenter={{ lat: 46.2276, lng: 2.2137 }}
+          events={[1, 2, 3]}>
+        </EventsMap>
       </div>
     </div>
 

@@ -250,7 +250,9 @@
 
  .block-1,
  .block-2,
- .block-3 {
+ .block-3,
+ .block-actu__left,
+ .block-actu__right {
    border-radius: 15px;
    -moz-box-shadow: 0px 0px 20px 1px #cfcfcf;
    -webkit-box-shadow: 0px 0px 20px 1px #cfcfcf;
@@ -448,6 +450,7 @@
  }
 
  .block-event {
+   z-index: 999;
    background-color: #fff;
    position: absolute;
    width: 350px;
@@ -970,7 +973,7 @@
 
  .info-vente li {
    color: #4a4a4a;
-   font-size: 12px;
+   font-size: 11px;
  }
 
  .stock,
@@ -1017,7 +1020,7 @@
  }
 
  .bloc-info:hover {
-   transform: inherit;
+   transform: inherit !important;
    box-shadow: none !important;
  }
 
@@ -1042,7 +1045,7 @@
    color: #edb82f;
  }
 
- table tr:hover {
+ .table tr:hover {
    cursor: pointer;
    -webkit-transform: scale(1.05);
    transform: scale(1.05);
@@ -1103,3 +1106,140 @@
    border-radius: 50% !important;
    margin-right: 5px !important;
  }
+
+ .page-link {
+  text-decoration: none;
+  color: #4a4a4a !important;
+}
+
+.background-don {
+  background-color: #F0F0F0;
+  border-radius: 20px;
+  padding: 10px;
+  height: 35px;
+  width: 230px;
+  text-align: center;
+}
+
+.background-don p{
+  font-size: 12px;
+  color: #9b9b9b;
+}
+
+.background-don p span{
+  font-size: 12px;
+  color: #edb82f;
+  font-weight: 700;
+  padding-left: 10px;
+}
+
+/**** Gestion utilisateurs ****/
+
+.btn__left ul{
+  display: inline-flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.btn__left ul li{
+  margin-right: 15px;
+}
+
+.btn-user{
+  border-radius: 50px;
+  width: 200px;
+  text-align: center;
+  font-size: 12px !important;
+  border: 2px solid;
+  padding: 5px;
+  color: #00bfac;
+  border-color: #00bfac;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-transform: uppercase;
+}
+
+.sh__right ul{
+  display: inline-flex;
+  list-style: none;
+}
+
+.sh__right ul li{
+  margin-right: 15px;
+}
+
+.sh__right ul li button{
+  font-weight: 100;
+  font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search-user {
+  padding: 5px 15px;
+  width: 180px;
+  border-radius: 50px;
+  background-color: #fff;
+  border: none;
+  font-size: 16px;
+  font-family: Arial, FontAwesome;
+  text-align: right;
+  display: block;
+}
+
+.none{
+  padding: 0!important;
+}
+
+.td-user tr th, .td-dons tr th{
+  text-align: center;
+  font-weight: bold;
+  font-size:14px;
+  color: #4a4a4a;
+  text-transform: uppercase;
+  background-color:#f0f0f0;
+}
+
+.td-user thead{
+  border-bottom:1px solid #f0f0f0;
+}
+
+.td-user td, .td-dons td{
+  text-align: center;
+  font-weight: 100;
+  font-size:12px;
+  color: #9b9b9b;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.td-user td, .td-user th, .td-dons td, .td-dons th{
+  padding: .75rem;
+  vertical-align: middle;
+}
+
+.td-user, .td-dons {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+  background-color: transparent;
+}
+
+/**** Actualités ****/
+
+/* .block-actu__left{
+  width: 59%;
+  float: left;
+  padding: 10px;
+  margin: 10px 0px 10px 0px;
+  background-color: #fff;
+}
+ 
+.block-actu__right{
+  width: 39%;
+  float: right;
+  padding: 10px;
+  margin: 10px 0px 10px 0px;
+  background-color: #fff;
+} */
