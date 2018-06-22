@@ -5,26 +5,36 @@ import '../../assets/css/Core/Block.css';
 
 class Block extends PureComponent {
   render() {
-    const { title, children, action } = this.props;
+    const { title, children, action, noPadding } = this.props;
 
     return (
       <div className="Block">
-        <header>
-          <h3 className="Block__title">{title}</h3>
-          {action}
-        </header>
-        <div className="Block__content">{children}</div>
+        {title || action ? (
+          <header>
+            <h3 className="Block__title">{title}</h3>
+            {action}
+          </header>
+        ) : null}
+        <div
+          className={`Block__content ${
+            noPadding ? 'Block__content--no-padding' : ''
+          }`}
+        >
+          {children}
+        </div>
       </div>
     );
   }
 }
 
 Block.defaultProps = {
+  title: null,
   action: null,
+  noPadding: false,
 };
 
 Block.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.shape({})),
     PropTypes.shape({}),
@@ -33,6 +43,7 @@ Block.propTypes = {
     PropTypes.arrayOf(PropTypes.shape({})),
     PropTypes.shape({}),
   ]),
+  noPadding: PropTypes.bool,
 };
 
 export default Block;

@@ -20,3 +20,7 @@
 .Block__content {
   padding: 0.875em 1.5em;
 }
+
+.Block__content.Block__content--no-padding {
+  padding: 0;
+}

@@ -1,4 +1,6 @@
-.events__map{
+.events__map {
   height: 100%;
   width: 100%;
+  border-radius: 0 0 var(--style-border-radius) var(--style-border-radius);
+  overflow: hidden;
 }

@@ -37,8 +37,10 @@ class EventsGoogleMap extends PureComponent {
       <div>
         {events.map(event => (
           <Marker
-            key={event._id}
+            key={event.id}
             position={{ lat: event.latitude, lng: event.longitude }}
+            className="Marker"
+            icon="/img/marker.png"
           />
         ))}
       </div>
