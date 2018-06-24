@@ -93,9 +93,7 @@ export default function (state = initialState, action) {
 
     case LOGOUT_USER:
       return {
-        ...state,
-        authenticated: false,
-        user: {},
+        ...initialState,
       };
 
     default:

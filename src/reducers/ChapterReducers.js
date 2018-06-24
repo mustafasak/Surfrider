@@ -6,6 +6,9 @@ import {
   FETCH_CREATE_CHAPTER_SUCCESS,
   FETCH_CREATE_CHAPTER_ERROR,
 } from '../actions/ChapterActions';
+import {
+  LOGOUT_USER
+} from '../actions/UserActions';
 
 const initialState = {
   chaptersLoading: false,
@@ -69,6 +72,11 @@ export default function (state = initialState, action) {
         createChapterLoading: false,
         createChapterError: false,
         createChapterErrors: action.payload,
+      };
+
+    case LOGOUT_USER:
+      return {
+        ...initialState,
       };
 
     default:
