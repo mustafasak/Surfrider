@@ -17,33 +17,29 @@ const Home = () => (
           </button>
         }
       >
-        <div className="container-fluid">
-          <div className="row">
-            <div className="block-event">
-              <Block title="Prochain événements">
-                <div className="date-event">
-                  <ul>
-                    <li>
-                      <img alt="" src="/img/dechet-1.jpg" />
-                      <span>12 juillet 2018 - Antenne Hendaye</span>
-                      <p>Nettoyage de la plage chef de baie</p>
-                    </li>
-                    <li>
-                      <img alt="" src="/img/dechet-2.jpg" />
-                      <span>25 juillet 2018 - Antenne Bretagne</span>
-                      <p>Nettoyage de la plage chef de baie</p>
-                    </li>
-                    <li>
-                      <img alt="" src="/img/dechet-3.jpg" />
-                      <span>26 août 2018 - Antenne Biarritz</span>
-                      <p>Nettoyage de la plage chef de baie</p>
-                    </li>
-                  </ul>
-                </div>
-                <button>Plus d'évenements</button>
-              </Block>
+        <div className="block-event">
+          <Block title="Prochain événements">
+            <div className="date-event">
+              <ul>
+                <li>
+                  <img alt="" src="/img/dechet-1.jpg" />
+                  <span>12 juillet 2018 - Antenne Hendaye</span>
+                  <p>Nettoyage de la plage chef de baie</p>
+                </li>
+                <li>
+                  <img alt="" src="/img/dechet-2.jpg" />
+                  <span>25 juillet 2018 - Antenne Bretagne</span>
+                  <p>Nettoyage de la plage chef de baie</p>
+                </li>
+                <li>
+                  <img alt="" src="/img/dechet-3.jpg" />
+                  <span>26 août 2018 - Antenne Biarritz</span>
+                  <p>Nettoyage de la plage chef de baie</p>
+                </li>
+              </ul>
             </div>
-          </div>
+            <button>Plus d'évenements</button>
+          </Block>
         </div>
         <div className="events__map">
           <EventsMap
@@ -58,7 +54,7 @@ const Home = () => (
 
     <div className="layout__grid-item layout__grid-item--10/10">
       <Block>
-        <div className="container-fluid">
+        <div>
           <div className="row">
             <div className="col-md-2 info-mois">
               <img alt="" src="/img/mois.png" />
@@ -103,11 +99,12 @@ const Home = () => (
             </div>
           </div>
         </div>
-        <div className="container-fluid">
+        <div>
           <div className="row">
-            <div className="col-md-12 block-stat">
-              <button className="stats">LES STATS DE L'ANTENNE</button>
+            <div className="col-md-2" />
+            <div className="col-md-10 block-stat">
               <p>* Chiffres calculés sur le mois M-1</p>
+              <button className="stats">LES STATS DE L'ANTENNE</button>
             </div>
           </div>
         </div>
@@ -125,7 +122,7 @@ const Home = () => (
           />
         }
       >
-        <div className="container-fluid">
+        <div>
           <div className="row">
             <div className="col-md-3 dons">
               <img alt="" src="/img/icon-yellow/don-yellow.svg" />
@@ -171,7 +168,7 @@ const Home = () => (
           />
         }
       >
-        <div className="container-fluid">
+        <div>
           <div className="row">
             <div className="col-md-3 event">
               <img alt="" src="/img/icon-yellow/adherent-yellow.svg" />
@@ -217,7 +214,7 @@ const Home = () => (
           />
         }
       >
-        <div className="container-fluid">
+        <div>
           <div className="row">
             <div className="col-md-3 organisation">
               <img alt="" src="/img/icon-yellow/event-yellow.svg" />
@@ -263,7 +260,7 @@ const Home = () => (
           />
         }
       >
-        <div className="container-fluid">
+        <div>
           <div className="row">
             <div className="col-md-3 antennes">
               <img alt="" src="/img/icon-yellow/user-yellow.svg" />

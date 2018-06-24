@@ -82,7 +82,7 @@ class ChapterGoogleMap extends PureComponent {
                   pixelOffset: { height: 125, width: 35 },
                 }}
               >
-                <Block title={`Antenne de ${chapter.name}`}>
+                <Block title={`Antenne ${chapter.name}`}>
                   <BlockContent
                     label="Responsable"
                     value={chapter.name ? chapter.name : ''}

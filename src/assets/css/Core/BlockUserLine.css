@@ -1,0 +1,18 @@
+.BlockUserLine {
+    align-items: center;
+    margin: 10px 0;
+    color: var(--color-grey);
+}
+
+.BlockUserLine .BlockUserLine__name {
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    font-size: 0.95em;
+    text-transform: uppercase;
+}
+
+.BlockUserLine .BlockUserLine__role {
+    color: #9B9B9B;
+    font-size: .85em;
+    font-weight: 300;
+}

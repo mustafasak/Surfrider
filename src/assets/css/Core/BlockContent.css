@@ -3,6 +3,12 @@
     color: var(--color-grey);
 }
 
+.BlockContent .BlockContent__label {
+    padding: 0 1em;
+    font-weight: 300;
+    text-transform: none;
+}
+
 .BlockContent .BlockContent__value {
     background: var(--color-white-dark);
     padding: 0.3em 1em;

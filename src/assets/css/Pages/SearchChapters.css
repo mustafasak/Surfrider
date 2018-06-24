@@ -15,4 +15,5 @@
   right: 1em;
   top: .95em;
   margin: 0 !important;
+  z-index: 1;
 }

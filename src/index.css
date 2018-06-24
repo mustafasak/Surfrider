@@ -91,6 +91,7 @@ a {
     border-radius: 2em;
     font-size: 0.75em;
     text-transform: uppercase;
+    text-align: center;
     box-shadow: -4px 5px 12px 0 rgba(0, 191, 172, 0.4);
     transition: all 0.3s ease-out;
     outline: none;
@@ -110,6 +111,11 @@ a {
     color: var(--color-primary);
     box-shadow: none;
     border: 1px solid var(--color-primary);
+}
+
+.Button.Button__outline:hover,
+.Button.Button__outline:focus {
+    background-color: var(--color-primary);
 }
 
 .Button.Button__outline.Button__outline-small {

@@ -1,5 +1,7 @@
 .CircularLoader {
   position: relative;
+  height: 24px;
+  width: 24px;
   animation: circular-loader-1 4.8s linear infinite;
 }
 

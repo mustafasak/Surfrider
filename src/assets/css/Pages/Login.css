@@ -124,8 +124,6 @@
 
 .Login__form .Button__loader {
     position: absolute;
-    top: 50%;
+    top: calc(50% - 12px);
     right: 20px;
-    height: 24px;
-    width: 24px;
 }

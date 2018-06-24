@@ -1,4 +1,7 @@
 .Block {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
   background: var(--color-white);
   border-radius: var(--style-border-radius);
@@ -18,7 +21,17 @@
 }
 
 .Block__content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   padding: 0.875em 1.5em;
+}
+
+.Block__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
 }
 
 .Block__content.Block__content--no-padding {
