@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { Redirect, NavLink } from 'react-router-dom';
 
 import { chapterShape } from '../../../config/shapes/chapter';
+import { userShape } from '../../../config/shapes/user';
 import removeDiacritics from '../../../helpers/generalHelpers';
 
 import Autocomplete from '../../Core/Autocomplete';
@@ -56,8 +57,12 @@ class SearchChapters extends PureComponent {
   }
 
   render() {
-    const { chapters } = this.props;
+    const { user, chapters } = this.props;
     const { filteredChapters } = this.state;
+
+    if (!user.isAdmin && chapters.length <= 1) {
+      return <Redirect to={`/antennes/${chapters[0].slug}`} />;
+    }
 
     return (
       <div className="SearchChapters">
@@ -104,11 +109,13 @@ class SearchChapters extends PureComponent {
 }
 
 SearchChapters.propTypes = {
+  user: PropTypes.shape(userShape).isRequired,
   chapters: PropTypes.arrayOf(PropTypes.shape(chapterShape)).isRequired,
   history: PropTypes.shape({ push: PropTypes.func }).isRequired,
 };
 
 const mapStateToProps = state => ({
+  user: state.user.user,
   chapters: state.chapter.chapters,
 });
 
