@@ -73,14 +73,14 @@
     left: 0;
     width: 100%;
     color: var(--color-grey);
-    transition: all .3s cubic-bezier(0.4,0,0.2,1);
-    transition-property: font-size,color,transform;
+    transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: font-size, color, transform;
 }
 
 .Login__form .Login__error {
     color: var(--color-error);
-
 }
+
 .Login__form .Login__input label.error span {
     color: var(--color-error);
 }
@@ -108,4 +108,24 @@
 
 .Login__form .Login__submit input:disabled {
     opacity: 0.3;
+}
+
+.Login__form .Button {
+    position: relative;
+}
+
+.Login__form .Button.Button--loading {
+    padding-right: 75px;
+}
+
+.Login__form .Button__input {
+    all: unset;
+}
+
+.Login__form .Button__loader {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    height: 24px;
+    width: 24px;
 }

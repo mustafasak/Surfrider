@@ -33,6 +33,10 @@
   animation: circular-loader-3 1.2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
 }
 
+.CircularLoader--white span::after {
+  border: 2px solid #FFFFFF;
+}
+
 @keyframes circular-loader-1 {
   0% {
     transform: rotate(0deg);

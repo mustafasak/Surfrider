@@ -5,7 +5,9 @@ import { bindActionCreators } from 'redux';
 import { Redirect } from 'react-router-dom';
 
 import { loginUser } from '../../actions/UserActions';
+
 import '../../assets/css/Pages/Login.css';
+import CircularLoader from '../Core/CircularLoader';
 
 class Login extends Component {
   constructor() {
@@ -39,7 +41,12 @@ class Login extends Component {
   }
 
   render() {
-    const { authenticated, loginError, loginErrorMessage } = this.props;
+    const {
+      authenticated,
+      loginLoading,
+      loginError,
+      loginErrorMessage,
+    } = this.props;
     const { email, password, emailFocussed, passwordFocussed } = this.state;
     let errorMessage = 'Une erreur est survenue';
 
@@ -112,12 +119,20 @@ class Login extends Component {
                 </label>
               </div>
               <div className="Login__submit">
-                <input
-                  type="submit"
-                  value="Connexion"
-                  className="Button"
-                  /* disabled={email === '' || password === ''} */
-                />
+                <div
+                  className={`Button ${loginLoading ? 'Button--loading' : ''}`}
+                >
+                  <input
+                    type="submit"
+                    value="Connexion"
+                    className="Button__input"
+                  />
+                  {loginLoading && (
+                    <div className="Button__loader">
+                      <CircularLoader clear />
+                    </div>
+                  )}
+                </div>
                 <a href="#" title="#">
                   Mot de passe oublié ?
                 </a>
@@ -134,6 +149,7 @@ class Login extends Component {
 
 Login.propTypes = {
   authenticated: PropTypes.bool.isRequired,
+  loginLoading: PropTypes.bool.isRequired,
   loginError: PropTypes.bool.isRequired,
   loginErrorMessage: PropTypes.string.isRequired,
   loginUser: PropTypes.func.isRequired,
@@ -141,6 +157,7 @@ Login.propTypes = {
 
 const mapStateToProps = state => ({
   authenticated: state.user.authenticated,
+  loginLoading: state.user.loginLoading,
   loginError: state.user.loginError,
   loginErrorMessage: state.user.loginErrorMessage,
 });
