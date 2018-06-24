@@ -74,8 +74,13 @@ class ChapterGoogleMap extends PureComponent {
             {this.state.openMarker === chapter._id && (
               <InfoBox
                 className="Infobox"
-                onCloseClick={() => this.onCloseClick}
-                options={{ enableEventPropagation: true }}
+                onCloseClick={() => this.onCloseClick()}
+                options={{
+                  closeBoxURL: '/img/close.png',
+                  enableEventPropagation: true,
+                  alignBottom: true,
+                  pixelOffset: { height: 125, width: 35 },
+                }}
               >
                 <Block title={`Antenne de ${chapter.name}`}>
                   <BlockContent

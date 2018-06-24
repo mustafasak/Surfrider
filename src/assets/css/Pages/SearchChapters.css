@@ -12,6 +12,7 @@
 
 .infoBox>img {
   position: absolute !important;
-  right: 1.8em;
-  top: 1.125em;
+  right: 1em;
+  top: .95em;
+  margin: 0 !important;
 }
