@@ -357,7 +357,7 @@ class CreateChapter extends PureComponent {
           <div className="layout__grid layout__grid--justify-center layout__margin-vertical--medium">
             <Submit
               label="Créer l'antenne"
-              loading={!createChapterLoading}
+              loading={createChapterLoading}
               error={createChapterErrors.global}
             />
           </div>
