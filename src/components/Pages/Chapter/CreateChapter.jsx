@@ -225,7 +225,7 @@ class CreateChapter extends PureComponent {
               <Block title="Informations sur le responsable">
                 <div className="layout__margin-vertical--medium">
                   <Input
-                    label="Nom du responsabe"
+                    label="Nom du responsable"
                     name="lastName"
                     placeholder="Exemple: Lambert"
                     value={lastName}
@@ -235,7 +235,7 @@ class CreateChapter extends PureComponent {
                 </div>
                 <div className="layout__margin-vertical--medium">
                   <Input
-                    label="Prénom du responsabe"
+                    label="Prénom du responsable"
                     name="firstName"
                     placeholder="Exemple: Jacques"
                     value={firstName}
@@ -246,7 +246,7 @@ class CreateChapter extends PureComponent {
                 </div>
                 <div className="layout__margin-vertical--medium">
                   <Input
-                    label="Email du responsabe"
+                    label="Email du responsable"
                     name="Email"
                     placeholder="Exemple: mail@exemple.fr"
                     value={email}
@@ -257,7 +257,7 @@ class CreateChapter extends PureComponent {
                 </div>
                 <div className="layout__margin-vertical--medium">
                   <Input
-                    label="Téléphone du responsabe"
+                    label="Téléphone du responsable"
                     name="phoneNumber"
                     placeholder="Exemple: 0601010101"
                     value={phoneNumber}
